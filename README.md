@@ -1,2 +1,6 @@
-# math-for-ML-and-DS
-Catatan Math for ML and DS Coursera
+## Catatan Math for ML and DS Coursera
+
+List :
+  * [Linear Algebra]()
+  * [Calculus]()
+  * [Probabiliities]()
