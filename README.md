@@ -1,6 +1,2 @@
-## Catatan Math for ML and DS Coursera
+## A G R O F A S T E R
 
-List :
-  * [Linear Algebra](https://github.com/AbdanulIkhlas/math-for-ML-and-DS/tree/main/Course%201%20-%20Linear%20Algebra)
-  * [Calculus]()
-  * [Probabiliities]()
