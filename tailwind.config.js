@@ -4,20 +4,16 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ["poppins", "sans-serif"],
-        body: ["Montserrat", "sans-serif"],
+        jakartaSans: ["Plus Jakarta Sans", "sans-serif"],
       },
       screens: {
         hp: "360px",
       },
       colors: {
-        primary: "#FFB10A",
-        pale: "#D9D9D9",
-        // secondary: "#10b981",
-        secondary: "#FFCF01",
-        dark: "#1f242d",
-        portfolioOne: "#6a10e0",
-        portfolioTwo: "#6a10e0",
+        primary: "#2C946C", //eucalyptus
+        edgewater: "#C1E0D3",
+        silverTree: "#7CBCA4",
+        shadowGreenn: "#8CC4AC",
       },
       boxShadow: {
         cardShadow: "0 5px 16px 0 rgba(0, 0, 0, 0.15)",
