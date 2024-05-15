@@ -33,6 +33,7 @@ const Navbar = ({ user }) => {
   const handleIsMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -52,16 +53,19 @@ const Navbar = ({ user }) => {
   return (
     <nav className="top-0">
       <div
-        className={`h-[60px] flex justify-between items-center md:justify-around md:items-center w-full fixed bg-white
-        -top-1 z-50 lg:py-5 px-5 py-6 shadow-md shadow-black/50 md:shadow-none`}
+        className={`h-[60px] flex justify-between items-center md:justify-between w-full fixed  ${
+          isMenuOpen || scrolling
+            ? "bg-white text-black"
+            : "bg-transparent text-white"
+        } top-0 z-50 px-5 transition-colors duration-300`}
       >
-        <div className="flex items-center gap-1 flex-1">
-          <img src="../../images/logo.png" alt="" className="h-[25px]" />
+        <div className="flex items-center gap-1 flex-1  lg:flex-none lg:ps-10">
+          <img src="../../images/logo.png" alt="" className="h-[25px]  " />
         </div>
         <WideContent user={user} />
         <div>{isMenuOpen && <SmallContent user={user} />}</div>
         <button
-          className="block md:hidden transition"
+          className="block md:hidden transition-colors duration-300 "
           onClick={handleIsMenuOpen}
         >
           {isMenuOpen ? <IoClose size={30} /> : <IoIosMenu size={30} />}
@@ -74,22 +78,20 @@ const Navbar = ({ user }) => {
 const WideContent = ({ user }) => {
   const location = useLocation();
   return (
-    <div className="md:flex items-center justify-end md:justify-center font-normal hidden">
+    <div className="items-center font-normal hidden  md:flex md:justify-end ">
       <div className="flex-10">
-        <ul className="flex gap-4 mr-16 text-[18px]">
+        <ul className="flex gap-10 text-[16px] font-medium ">
           {user ? (
             <>
               {menus.map((menu) => (
                 <li key={menu.link}>
                   <Link
-                    spy="true"
-                    smooth="true"
                     to={menu.link}
                     className={`${
                       location.pathname === menu.link
-                        ? "text-primary border-b border-primary"
-                        : "text-dark bg-white"
-                    } transition cursor-pointer`}
+                        ? "text-primary "
+                        : "text-dark"
+                    } hover:text-primary duration-300 transition cursor-pointer`}
                   >
                     {menu.name}
                   </Link>
@@ -101,14 +103,12 @@ const WideContent = ({ user }) => {
               {menus.map((menu) => (
                 <li key={menu.link}>
                   <Link
-                    spy="true"
-                    smooth="true"
                     to={menu.link}
                     className={`${
                       location.pathname === menu.link
-                        ? "text-primary border-b border-primary"
-                        : "text-dark bg-white"
-                    } transition cursor-pointer`}
+                        ? "text-primary "
+                        : "text-dark"
+                    } hover:text-primary duration-300 transition cursor-pointer`}
                   >
                     {menu.name}
                   </Link>
@@ -131,9 +131,9 @@ const SmallContent = ({ user }) => {
           {user ? (
             <>
               {menus.map((menu) => (
-                <Link key={menu.link} spy="true" smooth="true" to={menu.link}>
+                <Link key={menu.link} to={menu.link}>
                   <li
-                    className={`my-4 py-3 hover:bg-primary hover:text-white rounded-md cursor-pointer ${
+                    className={`my-4 py-3 hover:bg-primary hover:text-white rounded-md duration-300 cursor-pointer ${
                       location.pathname === menu.link
                         ? "text-white bg-primary"
                         : "text-dark bg-white"
@@ -147,9 +147,9 @@ const SmallContent = ({ user }) => {
           ) : (
             <>
               {menus.map((menu) => (
-                <Link key={menu.link} spy="true" smooth="true" to={menu.link}>
+                <Link key={menu.link} to={menu.link}>
                   <li
-                    className={`my-4 py-3 hover:bg-primary hover:text-white rounded-md cursor-pointer ${
+                    className={`my-4 py-3 hover:bg-primary hover:text-white rounded-md duration-300 cursor-pointer ${
                       location.pathname === menu.link
                         ? "text-white bg-primary"
                         : "text-dark bg-white"
