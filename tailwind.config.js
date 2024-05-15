@@ -25,6 +25,9 @@ export default {
       width: {
         round: "calc(100% - 160px)",
       },
+      aspectRatio: {
+        "9/16": "9 / 16",
+      },
     },
   },
   plugins: [],
