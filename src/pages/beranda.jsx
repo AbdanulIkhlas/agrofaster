@@ -1,7 +1,35 @@
+import Navbar from "../components/fragments/Navbar";
+import Footer from "../components/fragments/Footer";
+import ButtonCustom from "../components/elements/buttonCustom";
+import { Link } from "react-router-dom";
+
 const Beranda = () => {
   return (
-    <div>
-      <h1 className="text-3xl text-white bg-purple-600">Beranda</h1>
+    <div className="flex flex-col min-h-screen">
+      {/* navbar absolute */}
+      <Navbar />
+      <main className="w-full font-jakartaSans min-h-[1300px]">
+        {/* section 1 : home */}
+        <section
+          className="relative w-full flex flex-col justify-center items-start px-4 aspect-9/16 bg-cover bg-center bg-no-repeat bg-[url('./images/home-mobile.png')] 
+        md:bg-[url('./images/home-medium.png')] md:aspect-square md:px-8 lg:aspect-video lg:bg-[url('./images/home-dekstop.png')] lg:px-16"
+        >
+          <div className="absolute inset-0 bg-black opacity-40 text-gray"></div>
+          <h1
+            className="relative text-white text-2xl font-bold z-10 
+          md:text-4xl lg:text-[64px] lg:leading-[64px]"
+          >
+            Menyatukan Petani dan Pasar Tanpa Batas. Tumbuhkan Bisnis Pertanian
+            Anda.
+          </h1>
+          <Link className="mt-4 md:mt-8 lg:mt-12" to="/blog">
+            <ButtonCustom customClass="relative z-10 bg-primary text-white">
+              Pelajari lebih lanjut →
+            </ButtonCustom>
+          </Link>
+        </section>
+      </main>
+      <Footer />
     </div>
   );
 };
