@@ -3,6 +3,7 @@ import Footer from "../components/fragments/Footer";
 import BerandaHome from "../components/layouts/BerandaHome";
 import BerandaService from "../components/layouts/BerandaService";
 import BerandaAboutUs from "../components/layouts/BerandaAboutUs";
+import BerandaPoweredBy from "../components/layouts/BerandaPoweredBy";
 
 const Beranda = () => {
   return (
@@ -13,8 +14,10 @@ const Beranda = () => {
         <BerandaHome/>
         {/* SECTION 2 : LAYANAN */}
         <BerandaService/> 
-        {/* SECTION 2 : ABOUT US */}
+        {/* SECTION 3 : ABOUT US */}
         <BerandaAboutUs/> 
+        {/* SECTION 4 : POWERED BY */}
+        <BerandaPoweredBy/>
       </main>
       <Footer />
     </div>

@@ -1,8 +1,14 @@
 import { useState, useEffect } from "react";
 import CardLayanan from "./CardLayanan";
 import PropTypes from "prop-types";
+import PoweredBy from "./PoweredBy";
 
-const Carousel = ({ data, srcLeftButtonPath, srcRightButtonPath, chooseFragment }) => {
+const Carousel = ({
+  data,
+  srcLeftButtonPath,
+  srcRightButtonPath,
+  chooseFragment,
+}) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [cardsPerSlide, setCardsPerSlide] = useState(3);
 
@@ -13,18 +19,27 @@ const Carousel = ({ data, srcLeftButtonPath, srcRightButtonPath, chooseFragment 
       } else if (window.innerWidth >= 425 && window.innerWidth < 1024) {
         setCardsPerSlide(2);
       } else {
-        setCardsPerSlide(3);
+        if(chooseFragment === "layanan"){
+          setCardsPerSlide(3);
+        }else if(chooseFragment === "poweredBy"){
+          setCardsPerSlide(4);
+        }
       }
     };
 
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [chooseFragment]);
 
   const totalSlides = Math.ceil(data.length / cardsPerSlide);
 
-  const bgVariant = chooseFragment === "layanan" ? "bg-[#2C946C]" : chooseFragment === "poweredBy" ? "bg-[#38B6FF]" : "";
+  const bgVariant =
+    chooseFragment === "layanan"
+      ? "bg-[#2C946C]"
+      : chooseFragment === "poweredBy"
+      ? "bg-[#2C946C]"
+      : "";
 
   const slideLeft = () => {
     setCurrentSlide((prevSlide) => (prevSlide > 0 ? prevSlide - 1 : 0));
@@ -63,18 +78,29 @@ const Carousel = ({ data, srcLeftButtonPath, srcRightButtonPath, chooseFragment 
             className="flex justify-start transition-transform duration-700 ease-in-out"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
-            {data.map((item) => (
-              <div
-                key={item.id}
-                className="flex justify-center min-w-[calc(100%/1)] md:min-w-[calc(100%/2)] lg:min-w-[calc(100%/3)]"
-              >
-                {chooseFragment === "layanan" ? (
-                  <CardLayanan {...item} />
-                ) : chooseFragment === "poweredBy" ? (
-                  <CardLayanan {...item} />
-                ) : null}
-              </div>
-            ))}
+            {data.map((item) => {
+              if (chooseFragment === "layanan") {
+                return (
+                  <div
+                    key={item.id}
+                    className="flex justify-center min-w-[calc(100%/1)] md:min-w-[calc(100%/2)] lg:min-w-[calc(100%/3)]"
+                  >
+                    <CardLayanan {...item} />
+                  </div>
+                );
+              } else if (chooseFragment === "poweredBy") {
+                return (
+                  <div
+                    key={item.id}
+                    className="flex justify-center min-w-[calc(100%/1)] md:min-w-[calc(100%/2)] lg:min-w-[calc(100%/4)]"
+                  >
+                    <PoweredBy {...item} />
+                  </div>
+                );
+              } else {
+                return null;
+              }
+            })}
           </div>
         </div>
         {/* button right */}
