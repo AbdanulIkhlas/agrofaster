@@ -61,7 +61,7 @@ const Carousel = ({ data }) => {
             className="flex justify-start transition-transform duration-700 ease-in-out"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
-            {data.map((item, index) => (
+            {data.map((item) => (
               <div
                 key={item.id}
                 className="flex justify-center min-w-[calc(100%/1)] md:min-w-[calc(100%/2)] lg:min-w-[calc(100%/3)]"
