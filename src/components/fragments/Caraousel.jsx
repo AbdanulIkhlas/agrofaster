@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import CardLayanan from "./CardLayanan";
 import PropTypes from "prop-types";
 
-const Carousel = ({ data, srcLeftButtonPath, srcRightButtonPath, bulletsColor }) => {
+const Carousel = ({ data, srcLeftButtonPath, srcRightButtonPath, chooseFragment }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [cardsPerSlide, setCardsPerSlide] = useState(3);
 
@@ -23,6 +23,8 @@ const Carousel = ({ data, srcLeftButtonPath, srcRightButtonPath, bulletsColor })
   }, []);
 
   const totalSlides = Math.ceil(data.length / cardsPerSlide);
+
+  const bgVariant = chooseFragment === "layanan" ? "bg-[#2C946C]" : chooseFragment === "poweredBy" ? "bg-[#38B6FF]" : "";
 
   const slideLeft = () => {
     setCurrentSlide((prevSlide) => (prevSlide > 0 ? prevSlide - 1 : 0));
@@ -66,7 +68,11 @@ const Carousel = ({ data, srcLeftButtonPath, srcRightButtonPath, bulletsColor })
                 key={item.id}
                 className="flex justify-center min-w-[calc(100%/1)] md:min-w-[calc(100%/2)] lg:min-w-[calc(100%/3)]"
               >
-                <CardLayanan {...item} />
+                {chooseFragment === "layanan" ? (
+                  <CardLayanan {...item} />
+                ) : chooseFragment === "poweredBy" ? (
+                  <CardLayanan {...item} />
+                ) : null}
               </div>
             ))}
           </div>
@@ -94,7 +100,7 @@ const Carousel = ({ data, srcLeftButtonPath, srcRightButtonPath, bulletsColor })
           <div
             key={index}
             className={`w-3 h-3 rounded-full cursor-pointer ${
-              index === currentSlide ? `bg-[${bulletsColor}]` : "bg-gray-300"
+              index === currentSlide ? bgVariant : "bg-gray-300"
             }`}
             onClick={() => goToSlide(index)}
           ></div>
@@ -109,7 +115,7 @@ Carousel.propTypes = {
   data: PropTypes.array.isRequired,
   srcLeftButtonPath: PropTypes.string.isRequired,
   srcRightButtonPath: PropTypes.string.isRequired,
-  bulletsColor: PropTypes.string.isRequired,
+  chooseFragment: PropTypes.string.isRequired,
 };
 
 export default Carousel;
