@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import CardLayanan from "./CardLayanan";
 import PropTypes from "prop-types";
 
-const Carousel = ({ data }) => {
+const Carousel = ({ data, srcLeftButtonPath, srcRightButtonPath, bulletsColor }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [cardsPerSlide, setCardsPerSlide] = useState(3);
 
@@ -50,7 +50,7 @@ const Carousel = ({ data }) => {
           disabled={currentSlide === 0}
         >
           <img
-            src="../../svg/left-arrow.svg"
+            src={srcLeftButtonPath}
             alt="left arrow"
             className="w-8 h-8 fill-current text-[#2C946C]"
           />
@@ -82,7 +82,7 @@ const Carousel = ({ data }) => {
           disabled={currentSlide >= totalSlides - 1}
         >
           <img
-            src="../../svg/right-arrow.svg"
+            src={srcRightButtonPath}
             alt="right arrow"
             className="w-8 h-8 fill-current text-[#2C946C]"
           />
@@ -94,7 +94,7 @@ const Carousel = ({ data }) => {
           <div
             key={index}
             className={`w-3 h-3 rounded-full cursor-pointer ${
-              index === currentSlide ? "bg-[#2C946C]" : "bg-gray-300"
+              index === currentSlide ? `bg-[${bulletsColor}]` : "bg-gray-300"
             }`}
             onClick={() => goToSlide(index)}
           ></div>
@@ -107,6 +107,9 @@ const Carousel = ({ data }) => {
 // PropTypes data
 Carousel.propTypes = {
   data: PropTypes.array.isRequired,
+  srcLeftButtonPath: PropTypes.string.isRequired,
+  srcRightButtonPath: PropTypes.string.isRequired,
+  bulletsColor: PropTypes.string.isRequired,
 };
 
 export default Carousel;

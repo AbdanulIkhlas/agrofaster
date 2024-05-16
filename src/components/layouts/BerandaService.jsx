@@ -8,7 +8,12 @@ const BerandaService = () => {
       <section className="py-4 md:py-8">
         {/* layanan tampilan tablet dan dekstop */}
         <div className="hidden  md:block">
-          <Caraousel data={services} />
+          <Caraousel
+            data={services}
+            srcLeftButtonPath={`../../svg/left-arrow.svg`}
+            srcRightButtonPath={`../../svg/right-arrow.svg`}
+            bulletsColor={`#2C946C`}
+          />
         </div>
         {/* layanan tampilan mobile */}
         <div className="block md:hidden">
