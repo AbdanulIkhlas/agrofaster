@@ -12,7 +12,7 @@ const BerandaService = () => {
             data={services}
             srcLeftButtonPath={`../../svg/left-arrow.svg`}
             srcRightButtonPath={`../../svg/right-arrow.svg`}
-            bulletsColor={`#2C946C`}
+            chooseFragment="layanan"
           />
         </div>
         {/* layanan tampilan mobile */}
