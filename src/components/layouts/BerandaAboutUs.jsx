@@ -3,28 +3,28 @@ import { Link } from "react-router-dom";
 
 const BerandaAboutUs = () => {
   return (
-    <div className="w-full font-jakartaSans mt-4">
+    <div className="w-full font-jakartaSans mt-4 lg:px-16">
       {/* SECTION ABOUT US 1 */}
       <section className="md:flex">
         {/* image 1 */}
-        <div className="md:w-[50%] ">
+        <div className="md:w-[50%] lg:px-4 lg:py-8 ">
           <img
             src="./images/about-us.jpg"
             alt="About Us Image"
-            className="w-full h-full aspect-square md:aspect-auto"
+            className="w-full h-full lg:rounded-3xl"
           />
         </div>
         {/* content 1 */}
-        <div className="md:w-[50%] lg:ps-7 ">
+        <div className="px-2 md:w-[50%] lg:ps-7 ">
           <h1
-            className="mt-6 text-primary font-bold text-2xl ps-4
+            className="mt-10 text-primary font-bold text-2xl ps-4
           lg:text-3xl"
           >
             Siapa Agrofaster?
           </h1>
           <div
             className="leading-6 text-sm text-[#00352ECC] px-4 
-          lg:text-xl lg:leading-9 lg:pr-8"
+          lg:text-lg lg:leading-8 lg:pr-8"
           >
             <p className="mt-4 lg:mt-6">
               Agrofaster adalah platform inovatif yang bertekad untuk mengubah
@@ -45,25 +45,25 @@ const BerandaAboutUs = () => {
         </div>
       </section>
       {/* SECTION ABOUT US 2 */}
-      <section className="md:flex md:flex-row-reverse">
+      <section className="mt-10 md:flex md:flex-row-reverse">
         {/* image 2 */}
-        <div className="md:w-[50%] ">
+        <div className="md:w-[50%] lg:px-4 lg:py-8">
           <img
             src="./images/about-us-2.png"
             alt="About Us Image"
-            className="w-full h-full aspect-square md:aspect-auto"
+            className="w-full h-full lg:rounded-3xl"
           />
         </div>
         <div className="md:w-[50%] px-6">
           <h1
-            className="mt-6 text-black font-bold text-2xl
-          lg:text-4xl"
+            className="mt-10 text-black font-bold text-2xl
+          lg:text-3xl"
           >
             VISI Agrofaster
           </h1>
           <p
-            className="leading-6 mt-4 text-sm text-[#00352ECC]
-          lg:text-lg lg:leading-9 lg:pr-8"
+            className="leading-6 mt-4 lg:mt-8 text-sm text-[#00352ECC]
+          lg:text-base lg:leading-8 lg:pr-8"
           >
             Visi Agrofaster adalah mewujudkan transformasi yang merata dalam
             sektor pertanian, di mana setiap petani memiliki akses terhadap
@@ -78,7 +78,7 @@ const BerandaAboutUs = () => {
             pertanian, membawa dampak yang berkelanjutan bagi petani dan
             komunitas mereka.
           </p>
-          <div className="w-40 mt-4 md:mt-8 lg:mt-12 border border-black">
+          <div className="w-40 mt-4 lg:mt-8">
             <Link className="" to="/blog">
               <ButtonCustom customClass="relative z-10 bg-primary text-white hover:bg-silverTree">
                 About Us
