@@ -12,7 +12,7 @@ const Footer = () => {
         />
         <div className="md:flex md:gap-40  lg:w-full lg:gap-20">
           {/* section perusahaan */}
-          <section className=" w-full mt-4">
+          <section className=" w-full mt-8 lg:mt-4">
             <h1 className="text-center font-bold text-lg text-[#2C946C] lg:text-2xl">
               Perusahaan
             </h1>
@@ -31,7 +31,7 @@ const Footer = () => {
             </ul>
           </section>
           {/* section gabung */}
-          <section className=" w-full mt-4">
+          <section className=" w-full mt-8 lg:mt-4">
             <h1 className="text-center font-bold text-lg text-[#2C946C] lg:text-2xl">
               Gabung
             </h1>
