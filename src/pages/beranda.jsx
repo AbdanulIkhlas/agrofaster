@@ -4,6 +4,7 @@ import BerandaHome from "../components/layouts/BerandaHome";
 import BerandaService from "../components/layouts/BerandaService";
 import BerandaAboutUs from "../components/layouts/BerandaAboutUs";
 import BerandaPoweredBy from "../components/layouts/BerandaPoweredBy";
+import BerandaCustomerService from "../components/layouts/BerandaCustomerService";
 
 const Beranda = () => {
   return (
@@ -18,6 +19,8 @@ const Beranda = () => {
         <BerandaAboutUs/> 
         {/* SECTION 4 : POWERED BY */}
         <BerandaPoweredBy/>
+        {/* SECTION 5 : CUSTOMER SERVICE */}
+        <BerandaCustomerService/>
       </main>
       <Footer />
     </div>
