@@ -15,7 +15,7 @@ const BerandaAboutUs = () => {
           />
         </div>
         {/* content 1 */}
-        <div className="px-2 md:w-[50%] lg:ps-7 ">
+        <div className="px-2 md:w-[50%] lg:ps-7 lg:pt-16">
           <h1
             className="mt-10 text-primary font-bold text-2xl ps-4 md:mt-0 md:text-2xl
           lg:text-3xl"

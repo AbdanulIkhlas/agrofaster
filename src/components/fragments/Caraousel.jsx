@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import CardLayanan from "./CardLayanan";
 import PropTypes from "prop-types";
 import PoweredBy from "./PoweredBy";
+import TestimoniCard from "./TestimoniCard";
 
 const Carousel = ({
   data,
@@ -23,6 +24,8 @@ const Carousel = ({
           setCardsPerSlide(3);
         }else if(chooseFragment === "poweredBy"){
           setCardsPerSlide(4);
+        }else if(chooseFragment === "testimoni"){
+          setCardsPerSlide(2);
         }
       }
     };
@@ -39,7 +42,7 @@ const Carousel = ({
       ? "bg-[#2C946C]"
       : chooseFragment === "poweredBy"
       ? "bg-[#2C946C]"
-      : "";
+      : "bg-[#2C946C]";
 
   const slideLeft = () => {
     setCurrentSlide((prevSlide) => (prevSlide > 0 ? prevSlide - 1 : 0));
@@ -88,7 +91,8 @@ const Carousel = ({
                     <CardLayanan {...item} />
                   </div>
                 );
-              } else if (chooseFragment === "poweredBy") {
+              } 
+              else if (chooseFragment === "poweredBy") {
                 return (
                   <div
                     key={item.id}
@@ -97,7 +101,18 @@ const Carousel = ({
                     <PoweredBy {...item} />
                   </div>
                 );
-              } else {
+              } 
+              else if (chooseFragment === "testimoni") {
+                return (
+                  <div
+                    key={item.id}
+                    className="flex justify-center min-w-[calc(100%/1)] md:min-w-[calc(100%/2)] lg:min-w-[calc(100%/2)]"
+                  >
+                    <TestimoniCard {...item} />
+                  </div>
+                );
+              } 
+              else {
                 return null;
               }
             })}
