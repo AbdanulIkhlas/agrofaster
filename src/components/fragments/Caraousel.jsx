@@ -1,8 +1,15 @@
 import { useState, useEffect } from "react";
 import CardLayanan from "./CardLayanan";
 import PropTypes from "prop-types";
+import PoweredBy from "./PoweredBy";
+import TestimoniCard from "./TestimoniCard";
 
-const Carousel = ({ data }) => {
+const Carousel = ({
+  data,
+  srcLeftButtonPath,
+  srcRightButtonPath,
+  chooseFragment,
+}) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [cardsPerSlide, setCardsPerSlide] = useState(3);
 
@@ -13,16 +20,29 @@ const Carousel = ({ data }) => {
       } else if (window.innerWidth >= 425 && window.innerWidth < 1024) {
         setCardsPerSlide(2);
       } else {
-        setCardsPerSlide(3);
+        if(chooseFragment === "layanan"){
+          setCardsPerSlide(3);
+        }else if(chooseFragment === "poweredBy"){
+          setCardsPerSlide(4);
+        }else if(chooseFragment === "testimoni"){
+          setCardsPerSlide(2);
+        }
       }
     };
 
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [chooseFragment]);
 
   const totalSlides = Math.ceil(data.length / cardsPerSlide);
+
+  const bgVariant =
+    chooseFragment === "layanan"
+      ? "bg-[#2C946C]"
+      : chooseFragment === "poweredBy"
+      ? "bg-[#2C946C]"
+      : "bg-[#2C946C]";
 
   const slideLeft = () => {
     setCurrentSlide((prevSlide) => (prevSlide > 0 ? prevSlide - 1 : 0));
@@ -50,7 +70,7 @@ const Carousel = ({ data }) => {
           disabled={currentSlide === 0}
         >
           <img
-            src="../../svg/left-arrow.svg"
+            src={srcLeftButtonPath}
             alt="left arrow"
             className="w-8 h-8 fill-current text-[#2C946C]"
           />
@@ -61,14 +81,41 @@ const Carousel = ({ data }) => {
             className="flex justify-start transition-transform duration-700 ease-in-out"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
-            {data.map((item, index) => (
-              <div
-                key={item.id}
-                className="flex justify-center min-w-[calc(100%/1)] md:min-w-[calc(100%/2)] lg:min-w-[calc(100%/3)]"
-              >
-                <CardLayanan {...item} />
-              </div>
-            ))}
+            {data.map((item) => {
+              if (chooseFragment === "layanan") {
+                return (
+                  <div
+                    key={item.id}
+                    className="flex justify-center min-w-[calc(100%/1)] md:min-w-[calc(100%/2)] lg:min-w-[calc(100%/3)]"
+                  >
+                    <CardLayanan {...item} />
+                  </div>
+                );
+              } 
+              else if (chooseFragment === "poweredBy") {
+                return (
+                  <div
+                    key={item.id}
+                    className="flex justify-center min-w-[calc(100%/1)] md:min-w-[calc(100%/2)] lg:min-w-[calc(100%/4)]"
+                  >
+                    <PoweredBy {...item} />
+                  </div>
+                );
+              } 
+              else if (chooseFragment === "testimoni") {
+                return (
+                  <div
+                    key={item.id}
+                    className="flex justify-center min-w-[calc(100%/1)] md:min-w-[calc(100%/2)] lg:min-w-[calc(100%/2)]"
+                  >
+                    <TestimoniCard {...item} />
+                  </div>
+                );
+              } 
+              else {
+                return null;
+              }
+            })}
           </div>
         </div>
         {/* button right */}
@@ -82,7 +129,7 @@ const Carousel = ({ data }) => {
           disabled={currentSlide >= totalSlides - 1}
         >
           <img
-            src="../../svg/right-arrow.svg"
+            src={srcRightButtonPath}
             alt="right arrow"
             className="w-8 h-8 fill-current text-[#2C946C]"
           />
@@ -94,7 +141,7 @@ const Carousel = ({ data }) => {
           <div
             key={index}
             className={`w-3 h-3 rounded-full cursor-pointer ${
-              index === currentSlide ? "bg-[#2C946C]" : "bg-gray-300"
+              index === currentSlide ? bgVariant : "bg-gray-300"
             }`}
             onClick={() => goToSlide(index)}
           ></div>
@@ -107,6 +154,9 @@ const Carousel = ({ data }) => {
 // PropTypes data
 Carousel.propTypes = {
   data: PropTypes.array.isRequired,
+  srcLeftButtonPath: PropTypes.string.isRequired,
+  srcRightButtonPath: PropTypes.string.isRequired,
+  chooseFragment: PropTypes.string.isRequired,
 };
 
 export default Carousel;
