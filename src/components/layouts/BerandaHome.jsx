@@ -17,7 +17,7 @@ const BerandaHome = () => {
           Anda.
         </h1>
         <Link className="mt-4 md:mt-8 lg:mt-12" to="/blog">
-          <ButtonCustom customClass="relative z-10 bg-primary text-white hover:bg-silverTree">
+          <ButtonCustom customClass="relative z-10 bg-primary text-white duration-300 hover:shadow-primary hover:bg-silverTree">
             Pelajari lebih lanjut →
           </ButtonCustom>
         </Link>

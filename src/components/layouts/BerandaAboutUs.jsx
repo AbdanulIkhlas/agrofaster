@@ -80,7 +80,7 @@ const BerandaAboutUs = () => {
           </p>
           <div className="w-40 mt-4 lg:mt-8">
             <Link className="" to="/blog">
-              <ButtonCustom customClass="relative z-10 bg-primary text-white hover:bg-silverTree">
+              <ButtonCustom customClass="relative z-10 bg-primary text-white duration-300 hover:shadow-primary hover:bg-silverTree">
                 About Us
               </ButtonCustom>
             </Link>
