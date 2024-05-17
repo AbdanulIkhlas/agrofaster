@@ -30,7 +30,7 @@ const BerandaCustomerService = () => {
         <div className="flex justify-center mt-6">
           <Link className="mt-4 md:mt-8 lg:mt-12" to="/blog">
             <ButtonCustom
-              customClass="relative z-10 bg-edgewater text-primary duration-300 hover:text-white hover:bg-primary hover:shadow-white
+              customClass="relative z-10 bg-[#197939] text-slate-200 duration-300 hover:text-white hover:bg-[#0B7616] hover:shadow-white
             md:text-[20px] md:p-3"
             >
               Hubungi Kami

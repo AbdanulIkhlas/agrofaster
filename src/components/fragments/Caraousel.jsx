@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import CardLayanan from "./CardLayanan";
 import PropTypes from "prop-types";
 import PoweredBy from "./PoweredBy";
@@ -12,6 +12,9 @@ const Carousel = ({
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [cardsPerSlide, setCardsPerSlide] = useState(3);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const autoSlideInterval = useRef(null);
+  const slideRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -20,11 +23,11 @@ const Carousel = ({
       } else if (window.innerWidth >= 425 && window.innerWidth < 1024) {
         setCardsPerSlide(2);
       } else {
-        if(chooseFragment === "layanan"){
+        if (chooseFragment === "layanan") {
           setCardsPerSlide(3);
-        }else if(chooseFragment === "poweredBy"){
+        } else if (chooseFragment === "poweredBy") {
           setCardsPerSlide(4);
-        }else if(chooseFragment === "testimoni"){
+        } else if (chooseFragment === "testimoni") {
           setCardsPerSlide(2);
         }
       }
@@ -35,8 +38,28 @@ const Carousel = ({
     return () => window.removeEventListener("resize", handleResize);
   }, [chooseFragment]);
 
-  const totalSlides = Math.ceil(data.length / cardsPerSlide);
+  useEffect(() => {
+    autoSlideInterval.current = setInterval(slideRight, 3000);
+    return () => clearInterval(autoSlideInterval.current);
+  }, [currentSlide]);
 
+  useEffect(() => {
+    if (isTransitioning) {
+      setTimeout(() => {
+        if (currentSlide === data.length / cardsPerSlide) {
+          setIsTransitioning(false);
+          setCurrentSlide(0);
+        } else if (currentSlide === -1) {
+          setIsTransitioning(false);
+          setCurrentSlide(data.length / cardsPerSlide - 1);
+        } else {
+          setIsTransitioning(false);
+        }
+      }, 700);
+    }
+  }, [currentSlide, isTransitioning, data.length, cardsPerSlide]);
+
+  const totalSlides = Math.ceil(data.length / cardsPerSlide);
   const bgVariant =
     chooseFragment === "layanan"
       ? "bg-[#2C946C]"
@@ -45,29 +68,60 @@ const Carousel = ({
       : "bg-[#2C946C]";
 
   const slideLeft = () => {
-    setCurrentSlide((prevSlide) => (prevSlide > 0 ? prevSlide - 1 : 0));
+    clearInterval(autoSlideInterval.current);
+    setCurrentSlide((prevSlide) =>
+      prevSlide > 0 ? prevSlide - 1 : totalSlides - 1
+    );
+    setIsTransitioning(true);
   };
 
   const slideRight = () => {
+    clearInterval(autoSlideInterval.current);
     setCurrentSlide((prevSlide) =>
-      prevSlide < totalSlides - 1 ? prevSlide + 1 : totalSlides - 1
+      prevSlide < totalSlides - 1 ? prevSlide + 1 : 0
     );
+    setIsTransitioning(true);
   };
 
   const goToSlide = (index) => {
+    clearInterval(autoSlideInterval.current);
     setCurrentSlide(index);
+    setIsTransitioning(true);
+  };
+
+  const handleTouchStart = (e) => {
+    clearInterval(autoSlideInterval.current);
+    const touchStartX = e.touches[0].clientX;
+    slideRef.current = touchStartX;
+  };
+
+  const handleTouchMove = (e) => {
+    if (!slideRef.current) return;
+    const touchCurrentX = e.touches[0].clientX;
+    const distance = touchCurrentX - slideRef.current;
+    if (distance > 50) {
+      slideLeft();
+      slideRef.current = null;
+    } else if (distance < -50) {
+      slideRight();
+      slideRef.current = null;
+    }
   };
 
   return (
-    <div className="relative w-full">
+    <div
+      className="relative w-full"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+    >
       <div className="flex items-center overflow-hidden">
         {/* button left */}
         <button
           className={`absolute left-2 z-10 bg-transparent transition-opacity duration-500 ${
-            currentSlide === 0 ? "opacity-0 pointer-events-none" : "opacity-100"
+            totalSlides === 1 ? "opacity-0 pointer-events-none" : "opacity-100"
           }`}
           onClick={slideLeft}
-          disabled={currentSlide === 0}
+          disabled={isTransitioning}
         >
           <img
             src={srcLeftButtonPath}
@@ -78,8 +132,14 @@ const Carousel = ({
         {/* card slider */}
         <div className="w-full overflow-hidden">
           <div
-            className="flex justify-start transition-transform duration-700 ease-in-out"
-            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            className={`flex transition-transform duration-700 ease-in-out ${
+              isTransitioning ? "" : "transition-none"
+            }`}
+            style={{
+              transform: `translateX(-${
+                (currentSlide * 100) / cardsPerSlide
+              }%)`,
+            }}
           >
             {data.map((item) => {
               if (chooseFragment === "layanan") {
@@ -91,8 +151,7 @@ const Carousel = ({
                     <CardLayanan {...item} />
                   </div>
                 );
-              } 
-              else if (chooseFragment === "poweredBy") {
+              } else if (chooseFragment === "poweredBy") {
                 return (
                   <div
                     key={item.id}
@@ -101,8 +160,7 @@ const Carousel = ({
                     <PoweredBy {...item} />
                   </div>
                 );
-              } 
-              else if (chooseFragment === "testimoni") {
+              } else if (chooseFragment === "testimoni") {
                 return (
                   <div
                     key={item.id}
@@ -111,8 +169,7 @@ const Carousel = ({
                     <TestimoniCard {...item} />
                   </div>
                 );
-              } 
-              else {
+              } else {
                 return null;
               }
             })}
@@ -121,12 +178,10 @@ const Carousel = ({
         {/* button right */}
         <button
           className={`absolute right-2 z-10 bg-transparent transition-opacity duration-500 ${
-            currentSlide >= totalSlides - 1
-              ? "opacity-0 pointer-events-none"
-              : "opacity-100"
+            totalSlides === 1 ? "opacity-0 pointer-events-none" : "opacity-100"
           }`}
           onClick={slideRight}
-          disabled={currentSlide >= totalSlides - 1}
+          disabled={isTransitioning}
         >
           <img
             src={srcRightButtonPath}
@@ -136,7 +191,11 @@ const Carousel = ({
         </button>
       </div>
       {/* bullets nav */}
-      <div className="flex justify-center mt-2 space-x-2">
+      <div
+        className={`flex justify-center mt-2 space-x-2 ${
+          totalSlides === 1 ? "opacity-0 pointer-events-none" : "opacity-100"
+        }`}
+      >
         {Array.from({ length: totalSlides }).map((_, index) => (
           <div
             key={index}

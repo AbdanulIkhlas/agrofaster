@@ -22,7 +22,7 @@ export const services = [
   {
     id: 4,
     image: "../svg/service-4.svg",
-    title: "Harga Jual Lebih Berkualita",
+    title: "Harga Jual Lebih Berkualitas",
     content: "Dapatkan Harga Jual Produksi Lebih Berkualitas dengan Adil",
   },
   {

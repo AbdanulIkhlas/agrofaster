@@ -59,7 +59,7 @@ const Navbar = ({ user }) => {
             : "bg-transparent text-white"
         } top-0 z-50 px-5 transition-colors duration-300`}
       >
-        <div className="flex items-center gap-1 flex-1  lg:flex-none lg:ps-10">
+        <div className="flex items-center gap-1 flex-1  lg:flex-none lg:ps-10 ">
           <img src="../../images/logo.png" alt="" className="h-[25px]  " />
         </div>
         <WideContent user={user} />
@@ -78,9 +78,9 @@ const Navbar = ({ user }) => {
 const WideContent = ({ user }) => {
   const location = useLocation();
   return (
-    <div className="items-center font-normal hidden  md:flex md:justify-end ">
-      <div className="flex-10">
-        <ul className="flex gap-10 text-[16px] font-medium ">
+    <div className="items-center font-normal hidden  md:flex md:justify-end  lg:w-full lg:justify-center">
+      <div className="">
+        <ul className="flex gap-10 text-[16px] font-medium  font-jakartaSans lg:text-[18px] ">
           {user ? (
             <>
               {menus.map((menu) => (
