@@ -5,10 +5,10 @@ import { trusted } from "../../data/trusted";
 
 const BerandaPoweredBy = () => {
   return (
-    <div className="w-full mt-10 py-10 bg-emerald-100 min-h-40">
+    <div className="w-full mt-10 pt-10 pb-16 bg-emerald-100 min-h-40">
       {/* SECTION POWERED BY */}
       <section>
-        <h1 className="text-center font-bold text-lg text-[#2C946C] lg:text-xl">
+        <h1 className="text-center font-bold text-lg text-[#2C946C] lg:text-2xl">
           Powered By
         </h1>
         <section className="mt-8">
@@ -22,10 +22,13 @@ const BerandaPoweredBy = () => {
       </section>
       {/* SECTION TRUSTED */}
       <section className="mt-16">
-        <h1 className="text-center font-bold text-lg text-[#2C946C] lg:text-xl">
-          Dipercata oleh banyak Petani FastTani, Mitra Saprodi, Mitra Pasar
+        <h1 className="text-center font-bold text-lg text-[#2C946C] lg:text-2xl">
+          Dipercaya oleh banyak Petani FastTani, Mitra Saprodi, Mitra Pasar
         </h1>
-        <section className="flex flex-col items-center gap-6 mt-8">
+        <section
+          className="flex flex-col items-center gap-6 mt-8
+        md:flex-row md:px-8 md:justify-center lg:gap-12"
+        >
           {trusted.map((item) => {
             return (
               <Trusted
