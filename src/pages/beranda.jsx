@@ -21,7 +21,7 @@ const Beranda = () => {
           <BerandaService />
         </section>
         {/* SECTION 3 : ABOUT US */}
-        <section id="about" className="pt-10">
+        <section id="about" className="pt-10 md:pt-16 lg:pt-10">
           <BerandaAboutUs />
         </section>
         {/* SECTION 4 : POWERED BY */}

@@ -80,7 +80,7 @@ const WideContent = ({ user }) => {
   return (
     <div className="items-center font-normal hidden  md:flex md:justify-end  lg:w-full lg:justify-center">
       <div className="">
-        <ul className="flex gap-10 text-[16px] font-medium  font-jakartaSans lg:text-[18px] ">
+        <ul className="flex gap-10 text-[16px] font-medium  font-jakartaSans lg:text-[16px] ">
           {user ? (
             <>
               {menus.map((menu) => (

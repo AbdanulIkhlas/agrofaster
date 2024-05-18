@@ -17,15 +17,15 @@ const Footer = () => {
               Perusahaan
             </h1>
             <ul className="flex flex-col gap-2 text-base text-center mt-4 lg:font-medium">
-              <li>
+              <li className="cursor-pointer hover:underline duration-300">
                 <LinkScroll to="about" smooth={true} duration={1000}>
                   Tentang
                 </LinkScroll>
               </li>
-              <li>
+              <li className="cursor-pointer hover:underline duration-300">
                 <Link to="/produk">Produk</Link>
               </li>
-              <li>
+              <li className="cursor-pointer hover:underline duration-300">
                 <Link to="/blog">Blog</Link>
               </li>
             </ul>
@@ -36,10 +36,10 @@ const Footer = () => {
               Gabung
             </h1>
             <ul className="flex flex-col gap-2 text-base text-center mt-4 lg:font-medium">
-              <li>
+              <li className="cursor-pointer hover:underline duration-300">
                 <Link to="/komunitas">Komunitas Fast Tani</Link>
               </li>
-              <li>
+              <li className="cursor-pointer hover:underline duration-300">
                 <Link to="/">Saprodi</Link>
               </li>
             </ul>
@@ -52,31 +52,37 @@ const Footer = () => {
           </h1>
           <ul className="flex justify-center gap-4 text-base text-center mt-4">
             <li className="w-10 h-10 flex justify-center items-center rounded-full bg-primary p-[10px] hover:shadow-white">
-              <Link to="/">
+              <a
+                href="https://www.instagram.com/agrofaster.id/"
+                target="_blank"
+              >
                 <img
                   src="./svg/instagram-fill.svg"
                   alt="instagram"
                   className="w-10 h-10"
                 />
-              </Link>
+              </a>
             </li>
             <li className="w-10 h-10 flex justify-center items-center rounded-full bg-primary p-[10px] hover:shadow-white">
-              <Link to="/">
+              <a
+                href="https://www.youtube.com/channel/UCwKjqev-TZrS5a-k4FNna3g"
+                target="_blank"
+              >
                 <img
                   src="./svg/youtube.svg"
                   alt="youtube"
                   className="w-10 h-10 "
                 />
-              </Link>
+              </a>
             </li>
             <li className="w-10 h-10 flex justify-center items-center rounded-full bg-primary p-[10px] hover:shadow-white">
-              <Link to="/">
+              <a href="https://www.tiktok.com/@agrofaster.id" target="_blank">
                 <img
                   src="./svg/tiktok.svg"
                   alt="tiktok"
                   className="w-10 h-10 "
                 />
-              </Link>
+              </a>
             </li>
           </ul>
         </section>

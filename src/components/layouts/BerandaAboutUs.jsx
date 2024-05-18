@@ -1,6 +1,3 @@
-import ButtonCustom from "../elements/buttonCustom";
-import { Link } from "react-router-dom";
-
 const BerandaAboutUs = () => {
   return (
     <div className="w-full font-jakartaSans mt-4 md:mt-0 md:px-12 lg:px-16">
@@ -78,13 +75,6 @@ const BerandaAboutUs = () => {
             pertanian, membawa dampak yang berkelanjutan bagi petani dan
             komunitas mereka.
           </p>
-          <div className="w-40 mt-4 lg:mt-8">
-            <Link className="" to="/blog">
-              <ButtonCustom customClass="relative z-10 bg-primary text-white duration-300 hover:shadow-primary hover:bg-silverTree">
-                About Us
-              </ButtonCustom>
-            </Link>
-          </div>
         </div>
       </section>
     </div>
