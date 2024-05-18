@@ -4,7 +4,7 @@ import ButtonCustom from "../elements/buttonCustom";
 const BerandaHome = () => {
   return (
     <div>
-      <section className="relative w-full flex flex-col justify-center items-start h-[620px] lg:h-[800px]">
+      <section className="relative w-full flex flex-col justify-center items-start h-[780px] lg:h-[800px]">
         <img
           src="./images/home-mobile.png"
           alt="home"
