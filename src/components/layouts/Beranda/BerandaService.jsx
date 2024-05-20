@@ -1,6 +1,6 @@
-import { services } from "../../data/layanan";
-import Caraousel from "../fragments/Caraousel";
-import CardLayanan from "../fragments/CardLayanan";
+import { services } from "../../../data/layanan";
+import Caraousel from "../../fragments/Caraousel";
+import CardLayanan from "../../fragments/CardLayanan";
 
 const BerandaService = () => {
   return (

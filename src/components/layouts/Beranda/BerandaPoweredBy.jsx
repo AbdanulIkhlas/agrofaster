@@ -1,7 +1,7 @@
-import Caraousel from "../fragments/Caraousel";
-import Trusted from "../fragments/Trusted";
-import { poweredBy } from "../../data/poweredBy";
-import { trusted } from "../../data/trusted";
+import Caraousel from "../../fragments/Caraousel";
+import Trusted from "../../fragments/Trusted";
+import { poweredBy } from "../../../data/poweredBy";
+import { trusted } from "../../../data/trusted";
 
 const BerandaPoweredBy = () => {
   return (

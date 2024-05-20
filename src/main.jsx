@@ -3,7 +3,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import Beranda from "./pages/beranda";
-import Blog from "./pages/blog";
+import Artikel from "./pages/produk";
 import Produk from "./pages/produk";
 import Komunitas from "./pages/komunitas";
 
@@ -13,8 +13,8 @@ const router = createBrowserRouter([
     element: <Beranda />,
   },
   {
-    path: "/blog",
-    element: <Blog />,
+    path: "/artikel",
+    element: <Artikel />,
   },
   {
     path: "/produk",
