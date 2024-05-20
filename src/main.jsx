@@ -3,8 +3,10 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import Beranda from "./pages/beranda";
-import Artikel from "./pages/produk";
-import Produk from "./pages/produk";
+import Blog from "./pages/blog";
+import Event from "./pages/event";
+import FastTani from "./pages/fastTani";
+import Konsumen from "./pages/konsumen";
 import Komunitas from "./pages/komunitas";
 
 const router = createBrowserRouter([
@@ -13,12 +15,20 @@ const router = createBrowserRouter([
     element: <Beranda />,
   },
   {
-    path: "/artikel",
-    element: <Artikel />,
+    path: "/artikel/blog",
+    element: <Blog />,
   },
   {
-    path: "/produk",
-    element: <Produk />,
+    path: "/artikel/event",
+    element: <Event />,
+  },
+  {
+    path: "/produk/fast-tani",
+    element: <FastTani />,
+  },
+  {
+    path: "/produk/konsumen",
+    element: <Konsumen />,
   },
   {
     path: "/komunitas",
