@@ -34,6 +34,7 @@ const produkSubMenu = [
   {
     link: "/produk/fast-tani",
     name: "Fast Tani",
+    description: "Solusi Untuk Petani",
     active: false,
   },
   {
@@ -85,7 +86,7 @@ const Navbar = () => {
       <div
         className={`h-[60px] flex justify-between items-center md:justify-between w-full fixed 
         ${
-          isMenuOpen|| scrolling
+          isMenuOpen || scrolling
             ? "bg-white text-black"
             : "bg-transparent text-white"
         } 
@@ -143,11 +144,9 @@ const WideContent = () => {
                   </button>
                   {menu.haveSubMenu && activeSubMenu === index && (
                     <ul
-                      className={`absolute left-0 mt-2 bg-white shadow-lg rounded-md w-48 text-black transition-transform transform scale-95 origin-top-left duration-300 ease-in-out 
-                      border border-black md:-left-24 lg:left-0
-                      ${
-                        activeSubMenu === index ? "scale-100" : "scale-95"
-                      }`}
+                      className={`absolute left-0 mt-2 bg-white shadow-lg w-48 text-black transition-transform transform scale-95 origin-top-left duration-300 ease-in-out 
+                        md:-left-24 md:top-[34px] lg:left-0
+                      ${activeSubMenu === index ? "scale-100" : "scale-95"}`}
                     >
                       {(menu.name === "Produk"
                         ? produkSubMenu
@@ -155,10 +154,11 @@ const WideContent = () => {
                       ).map((subMenu) => (
                         <li
                           key={subMenu.link}
-                          className="px-4 py-2 hover:bg-gray-100 hover:rounded-md duration-300"
+                          className="px-4 py-2 hover:bg-gray-100 duration-300"
                         >
                           <Link to={subMenu.link} className="block">
-                            {subMenu.name}
+                            <p>{subMenu.name}</p>
+                            <p className="text-gray-400 text-sm">{subMenu.description}</p>
                           </Link>
                         </li>
                       ))}
@@ -250,7 +250,10 @@ const SmallContent = () => {
                           : "text-dark bg-white"
                       }`}
                     >
-                      {subMenu.name}
+                      <p>{subMenu.name}</p>
+                      <p className="text-gray-400 text-sm">
+                        {subMenu.description}
+                      </p>
                     </Link>
                   </li>
                 ))}
