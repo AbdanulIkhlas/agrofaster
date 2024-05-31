@@ -5,12 +5,12 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 const fastTaniList = [
   {
-    link: "./pasar-saprodi",
+    link: "./saprodi",
     name: "Pasar Saprodi",
     active: false,
   },
   {
-    link: "./jual-tani",
+    link: "./jual-hasil-panen",
     name: "Jual Tani",
     active: false,
   },
@@ -69,7 +69,7 @@ const SubNavbar = ({ page }) => {
         } 
         top-0 z-50 px-5 transition-colors duration-300`}
       >
-        <div className="flex items-center text-lg font-bold gap-1 flex-1 lg:flex-none lg:ps-10 ">
+        <div className="flex items-center text-lg font-bold gap-1 flex-1 text-primary lg:flex-none lg:ps-10 ">
           {page === "fastTani" ? <p>Produk / Fast Tani</p> : <p>Konsumen</p>}
         </div>
         <WideContent isMenuOpen={isMenuOpen} subNavbar={subNavbar} />

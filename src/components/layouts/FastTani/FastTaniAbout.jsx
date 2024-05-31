@@ -40,7 +40,7 @@ const FastTaniAbout = () => {
                 Cari Produk Saprodi
               </ButtonCustom>
             </Link>
-            <Link className="mt-4 md:mt-2 lg:mt-4" to="./hasil-panen">
+            <Link className="mt-4 md:mt-2 lg:mt-4" to="./jual-hasil-panen">
               <ButtonCustom customClass="relative z-10 bg-primary text-white duration-300 hover:shadow-primary hover:bg-silverTree">
                 Jual Hasil Panen
               </ButtonCustom>
