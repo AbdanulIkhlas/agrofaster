@@ -1,9 +1,7 @@
-// import PropTypes from 'prop-types'
-
 const Blog = () => {
-  return <div>Blog</div>;
-};
+  return (
+    <div>Sedang di kembangkan</div>
+  )
+}
 
-Blog.propTypes = {};
-
-export default Blog;
+export default Blog

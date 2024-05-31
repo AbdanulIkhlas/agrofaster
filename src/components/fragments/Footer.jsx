@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className=" font-jakartaSans bg-white border-t-2 border-primary ">
       <div className="w-full flex flex-col items-center pt-4 gap-4 lg:flex-row lg:px-32 lg:items-start lg:gap-16">
         <img
-          src="./images/logo.png"
+          src="../../../images/logo.png"
           alt="logo"
           className="w-[200px] mt-4  lg:w-[240px]"
         />
@@ -23,10 +23,10 @@ const Footer = () => {
                 </LinkScroll>
               </li>
               <li className="cursor-pointer hover:underline duration-300">
-                <Link to="/produk">Produk</Link>
+                <Link to="/produk/fast-tani">Produk</Link>
               </li>
               <li className="cursor-pointer hover:underline duration-300">
-                <Link to="/blog">Blog</Link>
+                <Link to="/artikel/blog">Blog</Link>
               </li>
             </ul>
           </section>
@@ -57,7 +57,7 @@ const Footer = () => {
                 target="_blank"
               >
                 <img
-                  src="./svg/instagram-fill.svg"
+                  src="../../../svg/instagram-fill.svg"
                   alt="instagram"
                   className="w-10 h-10"
                 />
@@ -69,7 +69,7 @@ const Footer = () => {
                 target="_blank"
               >
                 <img
-                  src="./svg/youtube.svg"
+                  src="../../../svg/youtube.svg"
                   alt="youtube"
                   className="w-10 h-10 "
                 />
@@ -78,7 +78,7 @@ const Footer = () => {
             <li className="w-10 h-10 flex justify-center items-center rounded-full bg-primary p-[10px] hover:shadow-white">
               <a href="https://www.tiktok.com/@agrofaster.id" target="_blank">
                 <img
-                  src="./svg/tiktok.svg"
+                  src="../../../svg/tiktok.svg"
                   alt="tiktok"
                   className="w-10 h-10 "
                 />

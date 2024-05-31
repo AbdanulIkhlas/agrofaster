@@ -1,4 +1,4 @@
-import ButtonCustom from "../elements/buttonCustom";
+import ButtonCustom from "../../elements/buttonCustom";
 import { Link } from "react-router-dom";
 
 const BerandaCustomerService = () => {

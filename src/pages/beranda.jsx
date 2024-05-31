@@ -1,11 +1,11 @@
 import Navbar from "../components/fragments/Navbar";
 import Footer from "../components/fragments/Footer";
-import BerandaHome from "../components/layouts/BerandaHome";
-import BerandaService from "../components/layouts/BerandaService";
-import BerandaAboutUs from "../components/layouts/BerandaAboutUs";
-import BerandaPoweredBy from "../components/layouts/BerandaPoweredBy";
-import BerandaCustomerService from "../components/layouts/BerandaCustomerService";
-import BerandaTestimoni from "../components/layouts/BerandaTestimoni";
+import BerandaHome from "../components/layouts/Beranda/BerandaHome";
+import BerandaService from "../components/layouts/Beranda/BerandaService";
+import BerandaAboutUs from "../components/layouts/Beranda/BerandaAboutUs";
+import BerandaPoweredBy from "../components/layouts/Beranda/BerandaPoweredBy";
+import BerandaCustomerService from "../components/layouts/Beranda/BerandaCustomerService";
+import BerandaTestimoni from "../components/layouts/Beranda/BerandaTestimoni";
 
 const Beranda = () => {
   return (

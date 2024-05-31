@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ButtonCustom from "../elements/buttonCustom";
+import ButtonCustom from "../../elements/buttonCustom";
 
 const BerandaHome = () => {
   return (

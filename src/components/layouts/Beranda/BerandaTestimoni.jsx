@@ -1,5 +1,5 @@
-import Caraousel from "../fragments/Caraousel";
-import {testimoni} from "../../data/testimoni";
+import Caraousel from "../../fragments/Caraousel";
+import {testimoni} from "../../../data/testimoni";
 const BerandaTestimoni = () => {
   return (
     <div>
