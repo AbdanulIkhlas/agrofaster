@@ -1,8 +1,8 @@
-import UnderDevelopment from "../components/fragments/UnderDevelopment"
-import { Link } from "react-router-dom"
-import ButtonCustom from "../components/elements/buttonCustom"
+import UnderDevelopment from "../components/fragments/UnderDevelopment";
+import { Link } from "react-router-dom";
+import ButtonCustom from "../components/elements/buttonCustom";
 
-const Blog = () => {
+const BeliHasilPanen = () => {
   return (
     <div className="w-full h-screen flex flex-col items-center">
       <UnderDevelopment />
@@ -15,6 +15,6 @@ const Blog = () => {
       </section>
     </div>
   );
-}
+};
 
-export default Blog
+export default BeliHasilPanen;

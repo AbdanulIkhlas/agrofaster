@@ -8,6 +8,9 @@ import Event from "./pages/event";
 import FastTani from "./pages/fastTani";
 import Konsumen from "./pages/konsumen";
 import Komunitas from "./pages/komunitas";
+import Saprodi from "./pages/saprodi";
+import JualHasilPanen from "./pages/jualHasilPanen"; 
+import BeliHasilPanen from "./pages/beliHasilPanen";
 
 const router = createBrowserRouter([
   {
@@ -27,8 +30,20 @@ const router = createBrowserRouter([
     element: <FastTani />,
   },
   {
+    path: "/produk/fast-tani/saprodi",
+    element: <Saprodi />,
+  },
+  {
+    path: "/produk/fast-tani/jual-hasil-panen",
+    element: <JualHasilPanen />,
+  },
+  {
     path: "/produk/konsumen",
     element: <Konsumen />,
+  },
+  {
+    path: "/produk/konsumen/beli-hasil-panen",
+    element: <BeliHasilPanen />,
   },
   {
     path: "/komunitas",

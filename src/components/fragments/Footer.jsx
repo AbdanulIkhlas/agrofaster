@@ -40,7 +40,7 @@ const Footer = () => {
                 <Link to="/komunitas">Komunitas Fast Tani</Link>
               </li>
               <li className="cursor-pointer hover:underline duration-300">
-                <Link to="/">Saprodi</Link>
+                <Link to="/produk/fast-tani/saprodi">Saprodi</Link>
               </li>
             </ul>
           </section>
