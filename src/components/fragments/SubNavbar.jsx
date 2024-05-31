@@ -17,10 +17,24 @@ const fastTaniList = [
   },
 ];
 
+const konsumenList = [
+  {
+    link: "./beli-hasil-panen",
+    name: "Beli Hasil Panen",
+    active: false,
+  },
+];
+
 const SubNavbar = ({ page }) => {
-  SubNavbar.PropTypes = {
-    page: PropTypes.string,
-  };
+  const [subNavbar, setSubNavbar] = useState([]);
+
+  useEffect(() => {
+    if (page === "fastTani") {
+      setSubNavbar(fastTaniList);
+    } else if (page === "konsumen") {
+      setSubNavbar(konsumenList);
+    }
+  }, [page]);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolling, setScrolling] = useState(false);
@@ -56,11 +70,11 @@ const SubNavbar = ({ page }) => {
         } 
         top-0 z-50 px-5 transition-colors duration-300`}
       >
-        <div className="flex items-center text-base font-semibold gap-1 flex-1 lg:flex-none lg:ps-10 ">
+        <div className="flex items-center text-base font-bold gap-1 flex-1 lg:flex-none lg:ps-10 ">
           {page === "fastTani" ? <p>Produk / Fast Tani</p> : <p>Konsumen</p>}
         </div>
-        <WideContent isMenuOpen={isMenuOpen} />
-        <div>{isMenuOpen && <SmallContent />}</div>
+        <WideContent isMenuOpen={isMenuOpen} subNavbar={subNavbar} />
+        <div>{isMenuOpen && <SmallContent subNavbar={subNavbar} />}</div>
         <button
           className="block md:hidden transition-colors duration-300"
           onClick={handleIsMenuOpen}
@@ -75,7 +89,8 @@ const SubNavbar = ({ page }) => {
     </nav>
   );
 };
-const WideContent = () => {
+
+const WideContent = ({ subNavbar }) => {
   const location = useLocation();
   const [activeSubMenu, setActiveSubMenu] = useState(null);
 
@@ -87,7 +102,7 @@ const WideContent = () => {
     <div className="items-center font-normal hidden md:flex md:justify-end lg:w-full lg:justify-end lg:px-20 ">
       <div>
         <ul className="flex gap-10 text-[16px] font-medium font-jakartaSans lg:text-[16px]">
-          {fastTaniList.map((menu, index) => (
+          {subNavbar.map((menu, index) => (
             <li key={menu.link} className="relative">
               {menu.haveSubMenu ? (
                 <>
@@ -137,13 +152,13 @@ const WideContent = () => {
   );
 };
 
-const SmallContent = () => {
+const SmallContent = ({ subNavbar }) => {
   const location = useLocation();
 
   return (
     <div className="lg:hidden block absolute z-10 top-[60px] w-full left-0 right-0 bg-white transition">
       <ul className="text-center text-xl mb-2 px-3">
-        {fastTaniList.map((menu) => (
+        {subNavbar.map((menu) => (
           <li key={menu.link} className="relative">
             {menu.haveSubMenu ? (
               <>
@@ -173,6 +188,18 @@ const SmallContent = () => {
       </ul>
     </div>
   );
+};
+
+SubNavbar.propTypes = {
+  page: PropTypes.string.isRequired,
+};
+
+WideContent.propTypes = {
+  subNavbar: PropTypes.array.isRequired,
+};
+
+SmallContent.propTypes = {
+  subNavbar: PropTypes.array.isRequired,
 };
 
 export default SubNavbar;

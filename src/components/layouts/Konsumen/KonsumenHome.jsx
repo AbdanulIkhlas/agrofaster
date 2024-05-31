@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import ButtonCustom from "../../elements/buttonCustom";
 
-const BerandaHome = () => {
+const KonsumenHome = () => {
   return (
     <div>
       <section className="relative w-full flex flex-col justify-center items-start h-[780px] lg:h-[800px]">
@@ -24,9 +24,9 @@ const BerandaHome = () => {
         <div className="relative w-full px-4 flex flex-col justify-center items-start md:px-8 lg:px-16">
           <h1
             className="relative text-white text-2xl font-bold z-10 
-          md:text-4xl lg:text-[64px] lg:leading-[76px]"
+          md:text-4xl lg:text-[64px] lg:leading-[76px] "
           >
-            Tingkatkan Keuntunganmu <span className="mb-2"><br /></span> Menjadi FastTani
+            Temukan Hasil Panen <br /> Berkualitas Tinggi
           </h1>
           <Link className="mt-4 md:mt-8 lg:mt-12" to="/artikel/blog">
             <ButtonCustom customClass="relative z-10 bg-primary text-white duration-300 hover:shadow-primary hover:bg-silverTree">
@@ -39,4 +39,4 @@ const BerandaHome = () => {
   );
 };
 
-export default BerandaHome;
+export default KonsumenHome;
