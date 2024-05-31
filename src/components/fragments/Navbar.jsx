@@ -11,7 +11,6 @@ const menus = [
     haveSubMenu: false,
   },
   {
-    link: "/Produk",
     name: "Produk",
     active: false,
     haveSubMenu: true,
@@ -23,7 +22,6 @@ const menus = [
     haveSubMenu: false,
   },
   {
-    link: "/artikel",
     name: "Artikel",
     active: false,
     haveSubMenu: true,
@@ -134,7 +132,7 @@ const WideContent = () => {
                       menu.haveSubMenu ? toggleSubMenu(index) : null
                     }
                   >
-                    {menu.name}
+                    <Link to={menu.link}>{menu.name}</Link>
                     {menu.haveSubMenu &&
                       (activeSubMenu === index ? (
                         <IoIosArrowUp />
@@ -158,7 +156,9 @@ const WideContent = () => {
                         >
                           <Link to={subMenu.link} className="block">
                             <p>{subMenu.name}</p>
-                            <p className="text-gray-400 text-sm">{subMenu.description}</p>
+                            <p className="text-gray-400 text-sm">
+                              {subMenu.description}
+                            </p>
                           </Link>
                         </li>
                       ))}
@@ -217,7 +217,9 @@ const SmallContent = () => {
                   : null
               }
             >
+              <Link to={menu.link}>
               {menu.name}
+              </Link>
               {menu.haveSubMenu && (
                 <>
                   {menu.name === "Produk" ? (
