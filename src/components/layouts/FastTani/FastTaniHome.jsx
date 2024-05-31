@@ -26,10 +26,9 @@ const BerandaHome = () => {
             className="relative text-white text-2xl font-bold z-10 
           md:text-4xl lg:text-[64px] lg:leading-[64px]"
           >
-            Menyatukan Petani dan Pasar Tanpa Batas. Tumbuhkan Bisnis Pertanian
-            Anda.
+            Tingkatkan Keuntunganmu Menjadi FastTani
           </h1>
-          <Link className="mt-4 md:mt-8 lg:mt-12" to="/blog">
+          <Link className="mt-4 md:mt-8 lg:mt-12" to="/artikel/blog">
             <ButtonCustom customClass="relative z-10 bg-primary text-white duration-300 hover:shadow-primary hover:bg-silverTree">
               Pelajari lebih lanjut →
             </ButtonCustom>
