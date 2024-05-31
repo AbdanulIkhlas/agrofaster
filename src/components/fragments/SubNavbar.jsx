@@ -6,12 +6,12 @@ import { IoIosMenu, IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 const fastTaniList = [
   {
-    link: "produk/fast-tani/pasar-saprodi",
+    link: "./pasar-saprodi",
     name: "Pasar Saprodi",
     active: false,
   },
   {
-    link: "produk/fast-tani/jual-tani",
+    link: "./jual-tani",
     name: "Jual Tani",
     active: false,
   },
