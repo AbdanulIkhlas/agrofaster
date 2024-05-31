@@ -2,6 +2,8 @@ import Navbar from "../components/fragments/Navbar";
 import Footer from "../components/fragments/Footer";
 import SubNavbar from "../components/fragments/SubNavbar";
 import KonsumenHome from "../components/layouts/Konsumen/KonsumenHome";
+import KonsumenAbout from "../components/layouts/Konsumen/KonsumenAbout";
+
 
 const Konsumen = () => {
   return (
@@ -16,7 +18,11 @@ const Konsumen = () => {
         {/* section home */}
         <section id="home">
           <KonsumenHome />
-        </section>  
+        </section>
+        {/* section about */}
+        <section id="about">
+          <KonsumenAbout />
+        </section> 
       </main>
       <Footer />
     </div>
