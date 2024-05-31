@@ -5,9 +5,9 @@ const FastTaniAbout = () => {
   return (
     <div className="w-full bg-white font-jakartaSans py-8 md:mt-0 md:px-12 lg:px-16">
       {/* SECTION ABOUT US 1 */}
-      <section className="md:flex">
+      <section className="w-full  lg:flex">
         {/* image 1 */}
-        <div className="md:w-[50%] lg:px-4 lg:py-8 ">
+        <div className="lg:w-[50%] lg:px-4 lg:py-8 ">
           <img
             src="../images/fast-tani-about.png"
             alt="About Us Image"
@@ -15,7 +15,7 @@ const FastTaniAbout = () => {
           />
         </div>
         {/* content 1 */}
-        <div className="px-2 md:w-[50%] lg:ps-7 lg:pt-16">
+        <div className="px-2 lg:w-[50%] lg:ps-7 lg:pt-16">
           <div
             className="leading-6 text-sm text-[#00352ECC] px-4 md:pr-2 md:leading-6
           lg:text-lg lg:leading-8 lg:pr-8"
@@ -35,12 +35,12 @@ const FastTaniAbout = () => {
             </p>
           </div>
           <div className="mt-4 px-4 flex flex-col gap-2">
-            <Link className="mt-4 md:mt-8 lg:mt-12" to="./saprodi">
+            <Link className="mt-4 md:mt-4 lg:mt-12" to="./saprodi">
               <ButtonCustom customClass="relative z-10 bg-primary text-white duration-300 hover:shadow-primary hover:bg-silverTree">
                 Cari Produk Saprodi
               </ButtonCustom>
             </Link>
-            <Link className="mt-4 md:mt-8 lg:mt-12" to="./hasil-panen">
+            <Link className="mt-4 md:mt-2 lg:mt-4" to="./hasil-panen">
               <ButtonCustom customClass="relative z-10 bg-primary text-white duration-300 hover:shadow-primary hover:bg-silverTree">
                 Jual Hasil Panen
               </ButtonCustom>
