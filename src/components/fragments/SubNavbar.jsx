@@ -70,7 +70,7 @@ const SubNavbar = ({ page }) => {
         } 
         top-0 z-50 px-5 transition-colors duration-300`}
       >
-        <div className="flex items-center text-base font-bold gap-1 flex-1 lg:flex-none lg:ps-10 ">
+        <div className="flex items-center text-lg font-bold gap-1 flex-1 lg:flex-none lg:ps-10 ">
           {page === "fastTani" ? <p>Produk / Fast Tani</p> : <p>Konsumen</p>}
         </div>
         <WideContent isMenuOpen={isMenuOpen} subNavbar={subNavbar} />
@@ -115,22 +115,7 @@ const WideContent = ({ subNavbar }) => {
                     onClick={() => toggleSubMenu(index)}
                   >
                     {menu.name}
-                    {activeSubMenu === index ? (
-                      <IoIosArrowUp />
-                    ) : (
-                      <IoIosArrowDown />
-                    )}
                   </button>
-                  {activeSubMenu === index && (
-                    <ul className="absolute left-0 mt-2 w-[200px] bg-white shadow-lg rounded-lg py-2">
-                      <li className="px-4 py-2 hover:bg-gray-100">
-                        <Link to="/sub-link-1">Sub Link 1</Link>
-                      </li>
-                      <li className="px-4 py-2 hover:bg-gray-100">
-                        <Link to="/sub-link-2">Sub Link 2</Link>
-                      </li>
-                    </ul>
-                  )}
                 </>
               ) : (
                 <Link
@@ -157,7 +142,7 @@ const SmallContent = ({ subNavbar }) => {
 
   return (
     <div className="lg:hidden block absolute z-10 top-[60px] w-full left-0 right-0 bg-white transition">
-      <ul className="text-center text-xl mb-2 px-3">
+      <ul className="text-center text-base mb-2 px-3">
         {subNavbar.map((menu) => (
           <li key={menu.link} className="relative">
             {menu.haveSubMenu ? (
