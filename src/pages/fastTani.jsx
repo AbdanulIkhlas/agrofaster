@@ -2,6 +2,7 @@ import Navbar from "../components/fragments/Navbar";
 import Footer from "../components/fragments/Footer";
 import SubNavbar from "../components/fragments/SubNavbar";
 import FastTaniHome from "../components/layouts/FastTani/FastTaniHome";
+import FastTaniAbout from "../components/layouts/FastTani/FastTaniAbout";
 
 const FastTani = () => {
   return (
@@ -12,6 +13,10 @@ const FastTani = () => {
         {/* section home */}
         <section id="home">
           <FastTaniHome />
+        </section>
+        {/* section about */}
+        <section id="about">
+          <FastTaniAbout />
         </section>
       </main>
       <Footer />
