@@ -1,16 +1,22 @@
 import Navbar from "../components/fragments/Navbar";
 import Footer from "../components/fragments/Footer";
 import SubNavbar from "../components/fragments/SubNavbar";
+import FastTaniHome from "../components/layouts/FastTani/FastTaniHome";
 
-const Beranda = () => {
+const FastTani = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-[#7dff8c]">
-      <Navbar />
-      <SubNavbar page="fastTani" />
-      <main className="w-full font-jakartaSans min-h-[1500px] pb-20"></main>
+    <div className="flex flex-col min-h-screen bg-[#effff1]">
+      <div className="absolute z-[99]"><Navbar /></div>
+      <div className="absolute z-[60]"><SubNavbar page="fastTani" /></div>
+      <main className="w-full font-jakartaSans min-h-[1500px] pb-20">
+        {/* section home */}
+        <section id="home">
+          <FastTaniHome />
+        </section>
+      </main>
       <Footer />
     </div>
   );
 };
 
-export default Beranda;
+export default FastTani;

@@ -1,21 +1,27 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { IoClose } from "react-icons/io5";
-import { IoIosMenu, IoIosArrowDown, IoIosArrowUp } from "react-icons/io"
 import PropTypes from "prop-types";
+import { IoClose } from "react-icons/io5";
+import { IoIosMenu, IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
-const fastTani = [
+const fastTaniList = [
   {
+    link: "produk/fast-tani/pasar-saprodi",
     name: "Pasar Saprodi",
-    link: "/Produk/fast-tani/saprodi",
+    active: false,
   },
   {
-    name: "Jual Panen",
-    link: "/Produk/fast-tani/jual-panen",
+    link: "produk/fast-tani/jual-tani",
+    name: "Jual Tani",
+    active: false,
   },
 ];
 
 const SubNavbar = ({ page }) => {
+  SubNavbar.PropTypes = {
+    page: PropTypes.string,
+  };
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolling, setScrolling] = useState(false);
 
@@ -42,70 +48,76 @@ const SubNavbar = ({ page }) => {
   return (
     <nav className="top-0">
       <div
-        className={`h-[60px] mt-14 flex justify-between items-center md:justify-between w-full fixed border border-black 
+        className={`h-[60px] mt-[60px] py-5 flex justify-between items-center md:justify-between w-full fixed 
         ${
           isMenuOpen || scrolling
-            ? "bg-white text-black"
+            ? "bg-white text-black border-t border-gray-300"
             : "bg-transparent text-white"
         } 
         top-0 z-50 px-5 transition-colors duration-300`}
       >
-        <div className="flex items-center gap-1 flex-1 lg:flex-none lg:ps-10">
-          <img src="../../images/logo.png" alt="" className="h-[25px]" />
+        <div className="flex items-center text-base font-semibold gap-1 flex-1 lg:flex-none lg:ps-10 ">
+          {page === "fastTani" ? <p>Produk / Fast Tani</p> : <p>Konsumen</p>}
         </div>
-        <WideContent page={page} />
-        <div>{isMenuOpen && <SmallContent page={page} />}</div>
+        <WideContent isMenuOpen={isMenuOpen} />
+        <div>{isMenuOpen && <SmallContent />}</div>
         <button
           className="block md:hidden transition-colors duration-300"
           onClick={handleIsMenuOpen}
         >
-          {isMenuOpen ? <IoClose size={30} /> : <IoIosMenu size={30} />}
+          {isMenuOpen ? (
+            <IoIosArrowUp size={30} />
+          ) : (
+            <IoIosArrowDown size={30} />
+          )}
         </button>
       </div>
     </nav>
   );
 };
-
-const WideContent = ({ page }) => {
+const WideContent = () => {
   const location = useLocation();
+  const [activeSubMenu, setActiveSubMenu] = useState(null);
+
+  const toggleSubMenu = (index) => {
+    setActiveSubMenu(activeSubMenu === index ? null : index);
+  };
 
   return (
-    <div className="items-center font-normal hidden md:flex md:justify-end lg:w-full lg:justify-center">
+    <div className="items-center font-normal hidden md:flex md:justify-end lg:w-full lg:justify-end lg:px-20 ">
       <div>
         <ul className="flex gap-10 text-[16px] font-medium font-jakartaSans lg:text-[16px]">
-          {page === "fastTani" ? (
-            <>
-              {fastTani.map((menu) => (
-                <li key={menu.link} className="relative">
-                  <Link
-                    to={menu.link}
-                    className={`${
+          {fastTaniList.map((menu, index) => (
+            <li key={menu.link} className="relative">
+              {menu.haveSubMenu ? (
+                <>
+                  <button
+                    className={`flex items-center gap-2 ${
                       location.pathname === menu.link
-                        ? "text-primary "
+                        ? "text-primary"
                         : "text-dark"
                     } hover:text-primary duration-300 transition cursor-pointer`}
+                    onClick={() => toggleSubMenu(index)}
                   >
                     {menu.name}
-                  </Link>
-                </li>
-              ))}
-            </>
-          ) : null}
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const SmallContent = ({ page }) => {
-
-  return (
-    <div className="lg:hidden block absolute top-[60px] w-full left-0 right-0 bg-white h-screen transition">
-      <ul className="text-center text-xl mb-2 px-3">
-        {page === "fastTani" ? (
-          <>
-            {fastTani.map((menu) => (
-              <li key={menu.link} className="relative">
+                    {activeSubMenu === index ? (
+                      <IoIosArrowUp />
+                    ) : (
+                      <IoIosArrowDown />
+                    )}
+                  </button>
+                  {activeSubMenu === index && (
+                    <ul className="absolute left-0 mt-2 w-[200px] bg-white shadow-lg rounded-lg py-2">
+                      <li className="px-4 py-2 hover:bg-gray-100">
+                        <Link to="/sub-link-1">Sub Link 1</Link>
+                      </li>
+                      <li className="px-4 py-2 hover:bg-gray-100">
+                        <Link to="/sub-link-2">Sub Link 2</Link>
+                      </li>
+                    </ul>
+                  )}
+                </>
+              ) : (
                 <Link
                   to={menu.link}
                   className={`${
@@ -116,18 +128,51 @@ const SmallContent = ({ page }) => {
                 >
                   {menu.name}
                 </Link>
-              </li>
-            ))}
-          </>
-        ) : null}
-      </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
 
-SubNavbar.propTypes = {
-  page: PropTypes.string.isRequired,
-};
+const SmallContent = () => {
+  const location = useLocation();
 
+  return (
+    <div className="lg:hidden block absolute z-10 top-[60px] w-full left-0 right-0 bg-white transition">
+      <ul className="text-center text-xl mb-2 px-3">
+        {fastTaniList.map((menu) => (
+          <li key={menu.link} className="relative">
+            {menu.haveSubMenu ? (
+              <>
+                <div
+                  className={`flex items-center justify-between text-left px-4 my-1 py-4 hover:bg-primary hover:text-white rounded-md duration-300 cursor-pointer ${
+                    location.pathname === menu.link
+                      ? "text-white bg-primary"
+                      : "text-dark bg-white"
+                  }`}
+                >
+                  {menu.name}
+                </div>
+              </>
+            ) : (
+              <div
+                className={`flex items-center justify-between text-left px-4 my-1 py-4 hover:bg-primary hover:text-white rounded-md duration-300 cursor-pointer ${
+                  location.pathname === menu.link
+                    ? "text-white bg-primary"
+                    : "text-dark bg-white"
+                }`}
+              >
+                <Link to={menu.link}>{menu.name}</Link>
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export default SubNavbar;

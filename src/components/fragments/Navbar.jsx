@@ -144,7 +144,7 @@ const WideContent = () => {
                   </button>
                   {menu.haveSubMenu && activeSubMenu === index && (
                     <ul
-                      className={`absolute left-0 mt-2 bg-white shadow-lg w-48 text-black transition-transform transform scale-95 origin-top-left duration-300 ease-in-out 
+                      className={`absolute z-50 left-0 mt-2 bg-white shadow-lg w-48 text-black transition-transform transform scale-95 origin-top-left duration-300 ease-in-out 
                         md:-left-24 md:top-[34px] lg:left-0
                       ${activeSubMenu === index ? "scale-100" : "scale-95"}`}
                     >
@@ -199,7 +199,7 @@ const SmallContent = () => {
   };
 
   return (
-    <div className="lg:hidden block absolute top-[60px] w-full left-0 right-0 bg-white h-screen transition">
+    <div className="lg:hidden block absolute z-50 top-[60px] w-full left-0 right-0 bg-white h-screen transition">
       <ul className="text-center text-xl mb-2 px-3">
         {menus.map((menu) => (
           <li key={menu.link} className="relative  ">
