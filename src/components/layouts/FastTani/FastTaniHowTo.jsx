@@ -12,7 +12,7 @@ const FastTaniHowTo = () => {
           className="hidden lg:block lg:w-[30%] lg:rounded-lg"
         />
         <div>
-          <h1 className="font-semibold mb-2 lg:text-4xl lg:font-bold lg:mb-6 lg:mt-4">
+          <h1 className="font-semibold mb-2 lg:text-3xl lg:font-bold lg:mb-6 lg:mt-4">
             Bagaimana Cara Memesan Kebutuhan Saprodi?
           </h1>
           {pesanSaprodi.map((item) => {
@@ -28,7 +28,7 @@ const FastTaniHowTo = () => {
         </div>
       </section>
       {/* SECTION Jual Hasil Panen */}
-      <section className="mb-4 lg:px-20 lg:flex lg:gap-10 ">
+      <section className="mb-4 lg:px-20 lg:flex lg:gap-10 lg:mt-8 ">
         <div>
           <h1 className="font-semibold mb-2 lg:text-4xl lg:font-bold lg:mb-6 lg:mt-4">
             Bagaimana Cara Menjual Hasil Panen di Agrofaster?
