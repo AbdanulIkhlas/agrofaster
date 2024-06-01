@@ -1,18 +1,16 @@
 import UnderDevelopment from "../components/fragments/UnderDevelopment";
-import { Link } from "react-router-dom";
-import ButtonCustom from "../components/elements/buttonCustom";
+import Navbar from "../components/fragments/Navbar";
+import Footer from "../components/fragments/Footer";
 
 const Saprodi = () => {
   return (
-    <div className="w-full h-screen flex flex-col items-center">
-      <UnderDevelopment />
-      <section className="w-[140px] mt-14">
-        <Link className="mt-4 md:mt-8 lg:mt-12" to="/">
-          <ButtonCustom customClass="relative z-10 bg-primary text-white duration-300 hover:shadow-primary hover:bg-silverTree">
-            Beranda →
-          </ButtonCustom>
-        </Link>
-      </section>
+    <div className="w-full h-screen flex flex-col ">
+      <Navbar />
+      <main className="flex flex-col items-center min-h-[800px] bg-shadowGreenn">
+        <UnderDevelopment />
+        <section className="w-[140px] mt-14"></section>
+      </main>
+      <Footer />
     </div>
   );
 };

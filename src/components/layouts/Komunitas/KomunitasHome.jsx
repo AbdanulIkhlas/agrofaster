@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import ButtonCustom from "../../elements/buttonCustom";
 import { Link as LinkScroll } from "react-scroll";
 
