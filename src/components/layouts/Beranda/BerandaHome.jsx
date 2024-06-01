@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link as LinkScroll } from "react-scroll";
 import ButtonCustom from "../../elements/buttonCustom";
 
 const BerandaHome = () => {
@@ -29,11 +29,16 @@ const BerandaHome = () => {
             Menyatukan Petani dan Pasar Tanpa Batas. Tumbuhkan Bisnis Pertanian
             Anda.
           </h1>
-          <Link className="mt-4 md:mt-8 lg:mt-12" to="/artikel/blog">
+          <LinkScroll
+            className="mt-4 md:mt-8 lg:mt-12"
+            to="about"
+            smooth={true}
+            duration={1000}
+          >
             <ButtonCustom customClass="relative z-10 bg-primary text-white duration-300 hover:shadow-primary hover:bg-silverTree">
               Pelajari lebih lanjut →
             </ButtonCustom>
-          </Link>
+          </LinkScroll>
         </div>
       </section>
     </div>
