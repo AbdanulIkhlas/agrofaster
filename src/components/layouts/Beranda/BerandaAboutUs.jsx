@@ -1,3 +1,5 @@
+import SectionHead from "../../elements/sectionHead";
+
 const BerandaAboutUs = () => {
   return (
     <div className="w-full font-jakartaSans mt-4 md:mt-0 md:px-12 lg:px-16">
@@ -8,17 +10,21 @@ const BerandaAboutUs = () => {
           <img
             src="./images/about-us.png"
             alt="About Us Image"
-            className="w-full h-full md:rounded-3xl"
+            className="w-[500px] h-[500px] md:rounded-3xl"
           />
         </div>
         {/* content 1 */}
         <div className="px-2 md:w-[50%] lg:ps-7 lg:pt-16">
-          <h1
-            className="mt-10 text-primary font-bold text-2xl ps-4 md:mt-0 md:text-2xl
-          lg:text-3xl"
-          >
-            Siapa Agrofaster?
-          </h1>
+          <SectionHead
+            customClassName="px-4 mt-4 md:text-start md:text-3xl"
+            content={[
+              {
+                title: "Siapa ",
+                classname: "font-bold",
+              },
+              { title: "Agrofaster? ", classname: "text-primary font-bold" },
+            ]}
+          />
           <div
             className="leading-6 text-sm text-[#00352ECC] px-4 md:pr-2 md:leading-6
           lg:text-lg lg:leading-8 lg:pr-8"
@@ -52,12 +58,16 @@ const BerandaAboutUs = () => {
           />
         </div>
         <div className="md:w-[50%] px-6 md:px-2">
-          <h1
-            className="mt-10 text-black font-bold text-2xl
-          lg:text-3xl"
-          >
-            VISI Agrofaster
-          </h1>
+          <SectionHead
+            customClassName="mt-4 md:text-start md:text-3xl"
+            content={[
+              {
+                title: "Visi ",
+                classname: "font-bold",
+              },
+              { title: "Agrofaster ", classname: "text-primary font-bold" },
+            ]}
+          />
           <p
             className="leading-6 mt-4 lg:mt-8 text-sm text-[#00352ECC] md:pr-2 md:leading-6
           lg:text-base lg:leading-8 lg:pr-8"

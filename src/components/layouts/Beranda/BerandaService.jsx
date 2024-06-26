@@ -5,7 +5,7 @@ import CardLayanan from "../../fragments/CardLayanan";
 const BerandaService = () => {
   return (
     <div>
-      <section className="py-4 md:py-8">
+      <section className="py-4 md:py-8 lg:px-14">
         {/* layanan tampilan tablet dan dekstop */}
         <div className="hidden  md:block">
           <Caraousel
