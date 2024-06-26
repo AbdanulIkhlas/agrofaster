@@ -24,9 +24,9 @@ const BerandaHome = () => {
         <div className="relative w-full px-4 flex flex-col justify-center items-start md:px-8 lg:px-16">
           <h1
             className="relative text-white text-2xl font-bold z-10 
-          md:text-4xl lg:text-[64px] lg:leading-[64px]"
+          md:text-4xl lg:text-[40px] lg:leading-[64px] lg:pe-[500px]"
           >
-            Menyatukan Petani dan Pasar Tanpa Batas. Tumbuhkan Bisnis Pertanian
+            Menyatukan Petani dan Pasar Tanpa Batas Tumbuhkan Bisnis Pertanian
             Anda.
           </h1>
           <LinkScroll
@@ -35,7 +35,7 @@ const BerandaHome = () => {
             smooth={true}
             duration={1000}
           >
-            <ButtonCustom customClass="relative z-10 bg-primary text-white duration-300 hover:shadow-primary hover:bg-silverTree">
+            <ButtonCustom customClass="relative z-10 bg-primary text-white duration-300 hover:shadow-primary hover:bg-silverTree lg:text-base lg:py-3 lg:px-4">
               Pelajari lebih lanjut →
             </ButtonCustom>
           </LinkScroll>
