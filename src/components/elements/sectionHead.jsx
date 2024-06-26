@@ -5,7 +5,7 @@ const SectionHead = (props) => {
 
   return (
     <h1
-      className={`text-black font-jakartaSans lg:text-[34px] ${customClassName}`}
+      className={`text-black font-jakartaSans lg:text-[34px]  ${customClassName}`}
     >
       {content.map((item, index) => (
         <span
