@@ -6,7 +6,7 @@ const BerandaAboutUs = () => {
         {/* image 1 */}
         <div className="md:w-[50%] lg:px-4 lg:py-8 ">
           <img
-            src="./images/about-us.jpg"
+            src="./images/about-us.png"
             alt="About Us Image"
             className="w-full h-full md:rounded-3xl"
           />

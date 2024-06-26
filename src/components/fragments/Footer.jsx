@@ -57,7 +57,7 @@ const Footer = () => {
                 target="_blank"
               >
                 <img
-                  src="../../../svg/instagram-fill.svg"
+                  src="../../../svg/instagram.svg"
                   alt="instagram"
                   className="w-10 h-10"
                 />
