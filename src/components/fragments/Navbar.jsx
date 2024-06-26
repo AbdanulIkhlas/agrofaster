@@ -82,7 +82,7 @@ const Navbar = () => {
   return (
     <nav className="top-0">
       <div
-        className={`h-[60px] flex justify-between items-center md:justify-between w-full fixed 
+        className={`h-[60px] flex justify-between items-center md:justify-between w-full fixed  lg:px-20
         ${
           isMenuOpen || scrolling
             ? "bg-white text-black"

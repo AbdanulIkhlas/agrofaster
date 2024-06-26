@@ -28,7 +28,7 @@ const Carousel = ({
         } else if (chooseFragment === "poweredBy") {
           setCardsPerSlide(4);
         } else if (chooseFragment === "testimoni") {
-          setCardsPerSlide(2);
+          setCardsPerSlide(3);
         }
       }
     };
@@ -62,10 +62,10 @@ const Carousel = ({
   const totalSlides = Math.ceil(data.length / cardsPerSlide);
   const bgVariant =
     chooseFragment === "layanan"
-      ? "bg-[#2C946C]"
+      ? "border-[#2C946C]"
       : chooseFragment === "poweredBy"
-      ? "bg-[#2C946C]"
-      : "bg-[#2C946C]";
+      ? "border-[#2C946C]"
+      : "border-[#2C946C]";
 
   const slideLeft = () => {
     clearInterval(autoSlideInterval.current);
@@ -117,7 +117,7 @@ const Carousel = ({
       <div className="flex items-center overflow-hidden">
         {/* button left */}
         <button
-          className={`absolute left-2 z-10 bg-transparent transition-opacity duration-500 ${
+          className={`hidden md:block absolute left-2 z-10 bg-transparent transition-opacity duration-500 ${
             totalSlides === 1 ? "opacity-0 pointer-events-none" : "opacity-100"
           }`}
           onClick={slideLeft}
@@ -164,7 +164,7 @@ const Carousel = ({
                 return (
                   <div
                     key={item.id}
-                    className="flex justify-center min-w-[calc(100%/1)] md:min-w-[calc(100%/2)] lg:min-w-[calc(100%/2)]"
+                    className="flex justify-center min-w-[calc(100%/1)] md:min-w-[calc(100%/2)] lg:min-w-[calc(100%/3)]"
                   >
                     <TestimoniCard {...item} />
                   </div>
@@ -177,7 +177,7 @@ const Carousel = ({
         </div>
         {/* button right */}
         <button
-          className={`absolute right-2 z-10 bg-transparent transition-opacity duration-500 ${
+          className={`hidden md:block absolute right-2 z-10 bg-transparent transition-opacity duration-500 ${
             totalSlides === 1 ? "opacity-0 pointer-events-none" : "opacity-100"
           }`}
           onClick={slideRight}
@@ -197,13 +197,21 @@ const Carousel = ({
         }`}
       >
         {Array.from({ length: totalSlides }).map((_, index) => (
-          <div
+          <bg
             key={index}
-            className={`w-3 h-3 rounded-full cursor-pointer ${
-              index === currentSlide ? bgVariant : "bg-gray-300"
+            className={`flex justify-center items-center p-1 rounded-full cursor-pointer border ${
+              index === currentSlide ? "border-primary" : "border-[#8f8d8d]"
             }`}
             onClick={() => goToSlide(index)}
-          ></div>
+          >
+            <div
+              key={index}
+              className={`w-1 h-1 rounded-full cursor-pointer border ${
+                index === currentSlide ? " border-primary" : "border-[#8f8d8d]"
+              }`}
+              onClick={() => goToSlide(index)}
+            ></div>
+          </bg>
         ))}
       </div>
     </div>

@@ -3,9 +3,11 @@ const CardLayanan = (props) => {
   const { title, image, classCustom, content } = props;
 
   return (
-    <div className={`flex justify-center items-center w-[75%]`}>
+    <div
+      className={`flex justify-center items-center w-[75%]`}
+    >
       <div
-        className={`${classCustom} flex flex-col pe-5 h-[220px] w-full ps-9 pt-8 rounded-2xl mb-8 border-b-4 border-primary shadow-lg
+        className={`${classCustom} flex flex-col pe-5 h-[220px] w-full ps-9 pt-8 rounded-2xl mb-8  shadow-lg
         shadow-slate-400 hover:shadow-xl hover:shadow-primary/75 transition-all duration-700
         `}
       >

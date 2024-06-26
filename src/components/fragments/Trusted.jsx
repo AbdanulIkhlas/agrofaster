@@ -6,7 +6,7 @@ const Trusted = ({ image, content, total }) => {
       <img
         src={image}
         alt="image"
-        className="bg-[#2C946C] p-2 w-10 h-10 rounded lg:w-16 lg:h-16"
+        className="p-2 w-12 h-12 rounded lg:w-16 lg:h-16"
       />
       <div className="pl-5">
         <p className="text-[16px] font-black text-primary lg:text-xl">

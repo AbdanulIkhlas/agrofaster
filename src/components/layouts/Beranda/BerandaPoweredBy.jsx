@@ -2,15 +2,26 @@ import Caraousel from "../../fragments/Caraousel";
 import Trusted from "../../fragments/Trusted";
 import { poweredBy } from "../../../data/poweredBy";
 import { trusted } from "../../../data/trusted";
+import SectionHead from "../../elements/sectionHead";
 
 const BerandaPoweredBy = () => {
   return (
     <div className="w-full mt-10 pt-10 pb-16 bg-emerald-100 min-h-40">
       {/* SECTION POWERED BY */}
       <section>
-        <h1 className="text-center font-bold text-lg text-[#2C946C] lg:text-2xl">
-          Powered By
-        </h1>
+        <SectionHead
+          customClassName="px-4 text-center mt-4 lg:mt-0"
+          content={[
+            {
+              title: "Powered ",
+              classname: "font-bold lg:text-[32px]",
+            },
+            {
+              title: "By ",
+              classname: "text-primary font-bold lg:text-[32px]",
+            },
+          ]}
+        />
         <section className="mt-8">
           <Caraousel
             data={poweredBy}
