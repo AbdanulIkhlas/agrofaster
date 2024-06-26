@@ -28,7 +28,7 @@ const Carousel = ({
         } else if (chooseFragment === "poweredBy") {
           setCardsPerSlide(4);
         } else if (chooseFragment === "testimoni") {
-          setCardsPerSlide(2);
+          setCardsPerSlide(3);
         }
       }
     };
@@ -164,7 +164,7 @@ const Carousel = ({
                 return (
                   <div
                     key={item.id}
-                    className="flex justify-center min-w-[calc(100%/1)] md:min-w-[calc(100%/2)] lg:min-w-[calc(100%/2)]"
+                    className="flex justify-center min-w-[calc(100%/1)] md:min-w-[calc(100%/2)] lg:min-w-[calc(100%/3)]"
                   >
                     <TestimoniCard {...item} />
                   </div>

@@ -51,7 +51,7 @@ const Footer = () => {
             Media Sosial
           </h1>
           <ul className="flex justify-center gap-4 text-base text-center mt-4">
-            <li className="w-10 h-10 flex justify-center items-center rounded-full bg-primary p-[10px] hover:shadow-white">
+            <li className="w-10 h-10 flex justify-center items-center rounded-full bg-primary p-[10px] cursor-pointer hover:shadow-white">
               <a
                 href="https://www.instagram.com/agrofaster.id/"
                 target="_blank"
@@ -59,11 +59,11 @@ const Footer = () => {
                 <img
                   src="../../../svg/instagram.svg"
                   alt="instagram"
-                  className="w-10 h-10"
+                  className="w-10 h-10 cursor-pointer"
                 />
               </a>
             </li>
-            <li className="w-10 h-10 flex justify-center items-center rounded-full bg-primary p-[10px] hover:shadow-white">
+            <li className="w-10 h-10 flex justify-center items-center rounded-full bg-primary p-[10px] cursor-pointer hover:shadow-white">
               <a
                 href="https://www.youtube.com/channel/UCwKjqev-TZrS5a-k4FNna3g"
                 target="_blank"
@@ -71,16 +71,16 @@ const Footer = () => {
                 <img
                   src="../../../svg/youtube.svg"
                   alt="youtube"
-                  className="w-10 h-10 "
+                  className="w-10 h-10 cursor-pointer"
                 />
               </a>
             </li>
-            <li className="w-10 h-10 flex justify-center items-center rounded-full bg-primary p-[10px] hover:shadow-white">
+            <li className="w-10 h-10 flex justify-center items-center rounded-full bg-primary p-[10px] cursor-pointer hover:shadow-white">
               <a href="https://www.tiktok.com/@agrofaster.id" target="_blank">
                 <img
                   src="../../../svg/tiktok.svg"
                   alt="tiktok"
-                  className="w-10 h-10 "
+                  className="w-10 h-10 cursor-pointer"
                 />
               </a>
             </li>

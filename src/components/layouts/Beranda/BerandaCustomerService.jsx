@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const BerandaCustomerService = () => {
   return (
-    <div className="w-full my-20 flex flex-col items-center justify-center lg:flex-row-reverse lg:h-[500px] bg-sky-100">
+    <div className="w-full my-20 flex flex-col items-center justify-center lg:flex-row-reverse lg:h-[500px] md:bg-sky-800">
       <section className="w-full h-full lg:w-[50%] lg:justify-center lg:items-center">
         <img
           src="./images/customer-service.png"
