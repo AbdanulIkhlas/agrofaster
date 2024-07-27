@@ -28,14 +28,22 @@ const BerandaCustomerService = () => {
           kepada kami dengan senang hati
         </p>
         <div className="flex justify-center mt-6">
-          <Link className="mt-4 md:mt-8 lg:mt-12" to="/artikel/blog">
+          <a href="https://wa.me/6282242719909" target="_blank">
             <ButtonCustom
               customClass="relative z-10 bg-[#197939] text-slate-200 duration-300 hover:text-white hover:bg-[#0B7616] hover:shadow-white
             md:text-[20px] md:p-3"
             >
               Hubungi Kami
             </ButtonCustom>
-          </Link>
+          </a>
+          {/* <Link className="mt-4 md:mt-8 lg:mt-12" to="/artikel/blog">
+            <ButtonCustom
+              customClass="relative z-10 bg-[#197939] text-slate-200 duration-300 hover:text-white hover:bg-[#0B7616] hover:shadow-white
+            md:text-[20px] md:p-3"
+            >
+              Hubungi Kami
+            </ButtonCustom>
+          </Link> */}
         </div>
       </section>
     </div>

@@ -7,9 +7,9 @@ const KonsumenHowTo = () => {
       {/* SECTION Memesan Kebutuhan Saprodi */}
       <section className="mb-4 lg:px-20 lg:flex lg:gap-10 ">
         <img
-          src="../images/kebutuhan-saprodi.png"
+          src="../images/konsumen.png"
           alt=""
-          className="hidden lg:block lg:w-[30%] lg:rounded-lg"
+          className="hidden lg:block lg:w-[25%] lg:rounded-lg"
         />
         <div>
           <h1 className="font-semibold mb-2 lg:text-3xl lg:font-bold lg:mb-6 lg:mt-4">
