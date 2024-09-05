@@ -1,3 +1,4 @@
+import ButtonCustom from "../../elements/buttonCustom";
 const KomunitasAbout = () => {
   return (
     <div className="w-full font-jakartaSans mt-4 md:mt-0 md:px-12 lg:px-16">
@@ -45,7 +46,7 @@ const KomunitasAbout = () => {
         </div>
       </section>
       {/* SECTION ABOUT US 2 */}
-      <section className="mt-10 md:flex md:flex-row-reverse">
+      <section className="mt-10 md:flex md:flex-row-reverse border border-black">
         {/* image 2 */}
         <div className="md:w-[50%] md:py-10 lg:px-4 lg:py-8">
           <img
@@ -77,6 +78,17 @@ const KomunitasAbout = () => {
             keterampilan, dan menjalani perjalanan menuju kesuksesan dalam
             pertanian bersama FastTani!
           </p>
+          <div className="mt-8 md:w-[96%] border border-black">
+            <a
+              className="mt-4 md:mt-2 lg:mt-4"
+              href="Https://Wa.me//6282242719909"
+              target="_blank"
+            >
+              <ButtonCustom customClass="relative z-10 bg-primary text-white duration-300 hover:shadow-primary hover:bg-silverTree">
+                Bergabung Komunitas FastTani
+              </ButtonCustom>
+            </a>
+          </div>
         </div>
       </section>
     </div>
