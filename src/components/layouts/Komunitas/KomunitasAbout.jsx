@@ -46,7 +46,7 @@ const KomunitasAbout = () => {
         </div>
       </section>
       {/* SECTION ABOUT US 2 */}
-      <section className="mt-10 md:flex md:flex-row-reverse border border-black">
+      <section className="mt-10 md:flex md:flex-row-reverse">
         {/* image 2 */}
         <div className="md:w-[50%] md:py-10 lg:px-4 lg:py-8">
           <img
@@ -78,7 +78,7 @@ const KomunitasAbout = () => {
             keterampilan, dan menjalani perjalanan menuju kesuksesan dalam
             pertanian bersama FastTani!
           </p>
-          <div className="mt-8 md:w-[96%] border border-black">
+          <div className="mt-8 md:w-[96%]">
             <a
               className="mt-4 md:mt-2 lg:mt-4"
               href="Https://Wa.me//6282242719909"
