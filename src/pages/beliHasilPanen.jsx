@@ -42,7 +42,7 @@ const BeliHasilPanen = () => {
         </div>
 
         {/* ITEM CONTENT CONTAINER */}
-        <section className="w-full mt-[26px] rounded-t-[32px] px-5 pb-20 bg-white border border-black">
+        <section className="w-full mt-[26px] rounded-t-[32px] px-5 h-full bg-white">
           {/* SEARCHING */}
           <Searching />
           {/* DISKON INFORMATION */}
@@ -54,7 +54,7 @@ const BeliHasilPanen = () => {
           />
           {/* KATEGORi */}
           <h1 className="font-semibold text-lg mt-1">Kategori</h1>
-          <div className="flex  gap-4 border border-black mt-2 overflow-auto">
+          <div className="flex  gap-4 mt-2 overflow-auto">
             {kategoriKonsumen.map((item) => (
               <div key={item.id} className="">
                 <KategoryCard {...item} />
