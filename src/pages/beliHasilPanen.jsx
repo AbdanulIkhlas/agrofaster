@@ -1,17 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SplashScreen from "../components/fragments/SplashScreen";
 import NavbarWebApp from "../components/fragments/NavbarWebApp";
 import Searching from "../components/fragments/Searching";
 import InfoDiscountCard from "../components/fragments/InfoDiscountCard";
 import { infoDiscount } from "../data/infoDiscount";
 import Caraousel from "../components/fragments/Caraousel";
+import { kategoriKonsumen } from "../data/kategoriKonsumen";
+import KategoryCard from "../components/fragments/KategoryCard";
 
 const BeliHasilPanen = () => {
-  const [showSplash, setShowSplash] = useState(true);
+  // Cek apakah splash screen sudah pernah ditampilkan sebelumnya
+  const [showSplash, setShowSplash] = useState(() => {
+    const splashShown = localStorage.getItem("splashShown");
+    return splashShown !== "true"; // Jika belum pernah ditampilkan, set true
+  });
 
   const handleSplashFinish = () => {
     setShowSplash(false); // Menghilangkan splash screen setelah animasi selesai
+    localStorage.setItem("splashShown", "true"); // Menyimpan status bahwa splash screen sudah ditampilkan
   };
+
+  useEffect(() => {
+    const splashShown = localStorage.getItem("splashShown");
+    if (splashShown === "true") {
+      setShowSplash(false); // Jangan tampilkan splash jika sudah pernah ditampilkan
+    }
+  }, []);
 
   return (
     <div className="relative w-full h-screen flex flex-col font-jakartaSans">
@@ -28,7 +42,7 @@ const BeliHasilPanen = () => {
         </div>
 
         {/* ITEM CONTENT CONTAINER */}
-        <section className="w-full mt-[26px] rounded-t-[32px] px-5 min-h-[520px] bg-white border border-black">
+        <section className="w-full mt-[26px] rounded-t-[32px] px-5 pb-20 bg-white border border-black">
           {/* SEARCHING */}
           <Searching />
           {/* DISKON INFORMATION */}
@@ -38,6 +52,15 @@ const BeliHasilPanen = () => {
             srcRightButtonPath={`../../svg/right-arrow.svg`}
             chooseFragment="diskon"
           />
+          {/* KATEGORi */}
+          <h1 className="font-semibold text-lg mt-1">Kategori</h1>
+          <div className="flex  gap-4 border border-black mt-2 overflow-auto">
+            {kategoriKonsumen.map((item) => (
+              <div key={item.id} className="">
+                <KategoryCard {...item} />
+              </div>
+            ))}
+          </div>
         </section>
       </main>
     </div>
