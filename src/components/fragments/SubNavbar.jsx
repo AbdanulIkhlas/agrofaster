@@ -103,25 +103,25 @@ const WideContent = ({ subNavbar }) => {
         <ul className="flex gap-10 text-[16px] font-medium font-jakartaSans lg:text-[16px]">
           {subNavbar.map((menu, index) => (
             <li key={menu.link} className="relative">
-              {menu.haveSubMenu ? (
-                <>
-                  <button
-                    className={`flex items-center gap-2 ${
-                      location.pathname === menu.link
-                        ? "text-primary"
-                        : "text-dark"
-                    } hover:text-primary duration-300 transition cursor-pointer`}
-                    onClick={() => toggleSubMenu(index)}
-                  >
-                    {menu.name}
-                  </button>
-                </>
+              {menu.name === "Jual Tani" ? (
+                <a
+                  href="https://wa.me/6282242719909"
+                  target="_blank"
+                  rel="noopener noreferrer" // Praktik keamanan yang baik
+                  className={`${
+                    location.pathname === menu.link
+                      ? "text-primary"
+                      : "text-dark"
+                  } hover:text-primary duration-300 transition cursor-pointer`}
+                >
+                  {menu.name}
+                </a>
               ) : (
                 <Link
                   to={menu.link}
                   className={`${
                     location.pathname === menu.link
-                      ? "text-primary "
+                      ? "text-primary"
                       : "text-dark"
                   } hover:text-primary duration-300 transition cursor-pointer`}
                 >
@@ -164,7 +164,13 @@ const SmallContent = ({ subNavbar }) => {
                     : "text-dark bg-white"
                 }`}
               >
-                <Link to={menu.link}>{menu.name}</Link>
+                {menu.name === "Jual Tani" ? (
+                  <a href="Https://Wa.me//6282242719909" target="_blank">
+                    Jual Tani
+                  </a>
+                ) : (
+                  <Link to={menu.link}>{menu.name}</Link>
+                )}
               </div>
             )}
           </li>

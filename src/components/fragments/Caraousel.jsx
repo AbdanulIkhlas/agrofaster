@@ -1,8 +1,9 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Fragment } from "react";
 import CardLayanan from "./CardLayanan";
 import PropTypes from "prop-types";
 import PoweredBy from "./PoweredBy";
 import TestimoniCard from "./TestimoniCard";
+import InfoDiscountCard from "./InfoDiscountCard";
 
 const Carousel = ({
   data,
@@ -29,6 +30,8 @@ const Carousel = ({
           setCardsPerSlide(4);
         } else if (chooseFragment === "testimoni") {
           setCardsPerSlide(3);
+        } else if (chooseFragment === "diskon") {
+          setCardsPerSlide(1);
         }
       }
     };
@@ -169,6 +172,15 @@ const Carousel = ({
                     <TestimoniCard {...item} />
                   </div>
                 );
+              } else if (chooseFragment === "diskon") {
+                return (
+                  <div
+                    key={item.id}
+                    className="flex justify-center min-w-[calc(100%/1)] md:min-w-[calc(100%/2)] lg:min-w-[calc(100%/3)]"
+                  >
+                    <InfoDiscountCard {...item} />
+                  </div>
+                );
               } else {
                 return null;
               }
@@ -193,7 +205,9 @@ const Carousel = ({
       {/* bullets nav */}
       <div
         className={`flex justify-center mt-2 space-x-2 ${
-          totalSlides === 1 ? "opacity-0 pointer-events-none" : "opacity-100"
+          totalSlides === 1 || chooseFragment === "diskon"
+            ? "opacity-0 pointer-events-none"
+            : "opacity-100"
         }`}
       >
         {Array.from({ length: totalSlides }).map((_, index) => (

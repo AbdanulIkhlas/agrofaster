@@ -11,6 +11,7 @@ import Komunitas from "./pages/komunitas";
 import Saprodi from "./pages/saprodi";
 import JualHasilPanen from "./pages/jualHasilPanen"; 
 import BeliHasilPanen from "./pages/beliHasilPanen";
+import Kategori from "./pages/kategori";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
   {
     path: "/komunitas",
     element: <Komunitas />,
+  },
+  {
+    path: "/produk/konsumen/beli-hasil-panen/kategori/:id",
+    element: <Kategori />,
   },
 ]);
 
