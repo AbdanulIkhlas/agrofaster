@@ -1,0 +1,26 @@
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.fade-in-bounce {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards, bounce 2s ease-in-out infinite;
+  /* Kombinasi animasi fade-in dan bounce */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
