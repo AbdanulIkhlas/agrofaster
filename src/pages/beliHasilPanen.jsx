@@ -42,7 +42,7 @@ const BeliHasilPanen = () => {
         </div>
 
         {/* ITEM CONTENT CONTAINER */}
-        <section className="w-full mt-[26px] rounded-t-[32px] px-5 h-full bg-white">
+        <section className="w-full mt-[26px] rounded-t-[32px] px-5 py-1 h-full bg-white">
           {/* SEARCHING */}
           <Searching />
           {/* DISKON INFORMATION */}
