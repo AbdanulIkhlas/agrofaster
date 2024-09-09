@@ -1,7 +1,7 @@
 const rekomendasiProduk = [1,4,6,8,9,12];
 
 
-const kategoriKonsumen = [
+const allItemKonsumen = [
   // beras
   {
     id: 1,
@@ -146,4 +146,4 @@ const kategoriKonsumen = [
   },
 ];
 
-export { kategoriKonsumen, rekomendasiProduk };
+export { allItemKonsumen, rekomendasiProduk };

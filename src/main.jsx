@@ -12,6 +12,7 @@ import Saprodi from "./pages/saprodi";
 import JualHasilPanen from "./pages/jualHasilPanen"; 
 import BeliHasilPanen from "./pages/beliHasilPanen";
 import Kategori from "./pages/kategori";
+import DetailProduk from "./pages/detailProduk";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
   {
     path: "/produk/konsumen/beli-hasil-panen/kategori/:id",
     element: <Kategori />,
+  },
+  {
+    path: "/produk/konsumen/beli-hasil-panen/detail-produk/:id",
+    element: <DetailProduk />,
   },
 ]);
 
