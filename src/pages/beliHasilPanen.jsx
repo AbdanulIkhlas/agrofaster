@@ -69,7 +69,7 @@ const BeliHasilPanen = () => {
           </div>
           {/* REKOMENDASI */}
           <h1 className="font-semibold text-lg mt-3">Rekomendasi</h1>
-          <div className="grid grid-cols-2 gap-4 mt-2 justify-items-center border border-red-500">
+          <div className="grid grid-cols-2 gap-4 mt-2 justify-items-center">
             {filteredRekomendasiProduk.map((item) => (
               <ProductCard
                 key={item.id}
