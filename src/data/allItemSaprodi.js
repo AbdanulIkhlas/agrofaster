@@ -1,4 +1,4 @@
-const rekomendasiProdukSaprodi = [1, 4, 6, 8, 9, 12];
+const rekomendasiProdukSaprodi = [1, 4, 6, 8, 11, 14, 17, 20];
 
 const allItemSaprodi = [
   // Benih Tanaman
