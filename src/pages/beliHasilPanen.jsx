@@ -90,7 +90,7 @@ const BeliHasilPanen = () => {
               <div className="flex gap-4 mt-2 overflow-x-auto scrollbar-thin pb-2">
                 {kategoriKonsumen.map((item) => (
                   <div key={item.id} className="">
-                    <KategoryCard {...item} />
+                    <KategoryCard {...item} page="konsumen" />
                   </div>
                 ))}
               </div>
@@ -107,6 +107,7 @@ const BeliHasilPanen = () => {
                     image={item.image}
                     name={item.name}
                     price={item.price}
+                    page="konsumen"
                   />
                 ))}
               </div>
