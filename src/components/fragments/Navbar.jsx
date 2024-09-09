@@ -82,7 +82,7 @@ const Navbar = () => {
   return (
     <nav className="top-0">
       <div
-        className={`h-[60px] flex justify-between items-center md:justify-between w-full fixed  lg:px-20
+        className={`h-[60px] flex justify-between items-center md:justify-between w-full fixed  lg:px-[60px]
         ${
           isMenuOpen || scrolling
             ? "bg-white text-black"
@@ -90,7 +90,7 @@ const Navbar = () => {
         } 
         top-0 z-50 px-5 transition-colors duration-300`}
       >
-        <div className="flex items-center gap-1 flex-1 lg:flex-none lg:ps-10">
+        <div className="flex items-center gap-1 flex-1 lg:flex-none">
           <img src="../../images/logo.png" alt="" className="h-[25px]" />
         </div>
         <WideContent />
@@ -217,9 +217,7 @@ const SmallContent = () => {
                   : null
               }
             >
-              <Link to={menu.link}>
-              {menu.name}
-              </Link>
+              <Link to={menu.link}>{menu.name}</Link>
               {menu.haveSubMenu && (
                 <>
                   {menu.name === "Produk" ? (
