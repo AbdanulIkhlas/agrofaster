@@ -8,6 +8,7 @@ import { kategoriKonsumen } from "../data/kategoriKonsumen";
 import KategoryCard from "../components/fragments/KategoryCard";
 import { allItemKonsumen, rekomendasiProduk } from "../data/allItemKonsumen";
 import ProductCard from "../components/fragments/ProductCard";
+import '../assets/css/ScrollbarStyle.css';
 
 const BeliHasilPanen = () => {
   // Cek apakah splash screen sudah pernah ditampilkan sebelumnya menggunakan sessionStorage
@@ -83,8 +84,10 @@ const BeliHasilPanen = () => {
               />
 
               {/* KATEGORI */}
-              <h1 className="font-semibold text-lg mt-1 md:text-xl md:mb-3">Kategori</h1>
-              <div className="flex gap-4 mt-2 overflow-auto pb-2">
+              <h1 className="font-semibold text-lg mt-1 md:text-xl md:mb-3">
+                Kategori
+              </h1>
+              <div className="flex gap-4 mt-2 overflow-x-auto scrollbar-thin pb-2">
                 {kategoriKonsumen.map((item) => (
                   <div key={item.id} className="">
                     <KategoryCard {...item} />
@@ -93,7 +96,9 @@ const BeliHasilPanen = () => {
               </div>
 
               {/* REKOMENDASI */}
-              <h1 className="font-semibold text-lg mt-3 md:text-xl md:mb-3">Rekomendasi</h1>
+              <h1 className="font-semibold text-lg mt-3 md:text-xl md:mb-3">
+                Rekomendasi
+              </h1>
               <div className="grid grid-cols-2 gap-4 mt-2 justify-items-center">
                 {filteredRekomendasiProduk.map((item) => (
                   <ProductCard
@@ -115,7 +120,9 @@ const BeliHasilPanen = () => {
               }`}
             >
               {/* HASIL PENCARIAN */}
-              <h1 className="font-semibold text-lg mt-5 md:text-xl md:mb-3">Hasil Pencarian</h1>
+              <h1 className="font-semibold text-lg mt-5 md:text-xl md:mb-3">
+                Hasil Pencarian
+              </h1>
               <div className="grid grid-cols-2 gap-4 mt-2 justify-items-center">
                 {filteredItems.length > 0 ? (
                   filteredItems.map((item) => (

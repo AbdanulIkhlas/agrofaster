@@ -1,0 +1,20 @@
+/* CSS untuk scrollbar */
+.scrollbar-thin {
+  /* Ukuran kecil untuk scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #f1f1f1; /* Warna scrollbar dan latar belakangnya */
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 1px; /* Ketebalan scrollbar vertikal */
+  height: 1px; /* Ketebalan horizontal scrollbar */
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Warna thumb */
+  border-radius: 10px; /* Membuat ujung scrollbar lebih bulat */
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Warna latar belakang track */
+}
