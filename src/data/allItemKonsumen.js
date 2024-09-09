@@ -5,7 +5,7 @@ const allItemKonsumen = [
   // beras
   {
     id: 1,
-    image: "../../images/item/Beras Premium.png",
+    image: "../../../../../images/item/Beras Premium.png",
     name: "Beras Premium",
     price: "14.000",
     category: "Beras",
@@ -14,7 +14,7 @@ const allItemKonsumen = [
   },
   {
     id: 2,
-    image: "../../images/item/Beras Merah.png",
+    image: "../../../../../images/item/Beras Merah.png",
     name: "Beras Merah",
     price: "20.000",
     category: "Beras",
@@ -23,7 +23,7 @@ const allItemKonsumen = [
   },
   {
     id: 3,
-    image: "../../images/item/Beras Hitam.png",
+    image: "../../../../../images/item/Beras Hitam.png",
     name: "Beras Hitam",
     price: "25.000",
     category: "Beras",
@@ -34,7 +34,7 @@ const allItemKonsumen = [
   // cabai
   {
     id: 4,
-    image: "../../images/item/Cabai Merah.png",
+    image: "../../../../../images/item/Cabai Merah.png",
     name: "Cabai Merah",
     price: "20.000",
     category: "Cabai",
@@ -43,7 +43,7 @@ const allItemKonsumen = [
   },
   {
     id: 5,
-    image: "../../images/item/Cabai hijau.png",
+    image: "../../../../../images/item/Cabai hijau.png",
     name: "Cabai Hijau",
     price: "20.000",
     category: "Cabai",
@@ -52,7 +52,7 @@ const allItemKonsumen = [
   },
   {
     id: 6,
-    image: "../../images/item/Cabai Rawit.png",
+    image: "../../../../../images/item/Cabai Rawit.png",
     name: "Cabai Rawit",
     price: "30.000",
     category: "Cabai",
@@ -63,7 +63,7 @@ const allItemKonsumen = [
   // biji-bijian
   {
     id: 7,
-    image: "../../images/item/Kopi Robusta.png",
+    image: "../../../../../images/item/Kopi Robusta.png",
     name: "Kopi Robusta",
     price: "170.000",
     category: "Biji-Bijian",
@@ -72,7 +72,7 @@ const allItemKonsumen = [
   },
   {
     id: 8,
-    image: "../../images/item/Kopi Arabika.png",
+    image: "../../../../../images/item/Kopi Arabika.png",
     name: "Biji Kopi Arabika",
     price: "180.000",
     category: "Biji-Bijian",
@@ -81,7 +81,7 @@ const allItemKonsumen = [
   },
   {
     id: 9,
-    image: "../../images/item/Kakao.png",
+    image: "../../../../../images/item/Kakao.png",
     name: "Biji Kakao",
     price: "150.000",
     category: "Biji-Bijian",
@@ -90,7 +90,7 @@ const allItemKonsumen = [
   },
   {
     id: 10,
-    image: "../../images/item/Jagung.png",
+    image: "../../../../../images/item/Jagung.png",
     name: "Biji Jagung",
     price: "7.000",
     category: "Biji-Bijian",
@@ -101,7 +101,7 @@ const allItemKonsumen = [
   // umbi-umbian
   {
     id: 11,
-    image: "../../images/item/Kentang.png",
+    image: "../../../../../images/item/Kentang.png",
     name: "Kentang",
     price: "20.000",
     category: "Umbi-Umbian",
@@ -110,7 +110,7 @@ const allItemKonsumen = [
   },
   {
     id: 12,
-    image: "../../images/item/Ubi Jalar.png",
+    image: "../../../../../images/item/Ubi Jalar.png",
     name: "Ubi Jalar",
     price: "10.000",
     category: "Umbi-Umbian",
@@ -119,7 +119,7 @@ const allItemKonsumen = [
   },
   {
     id: 13,
-    image: "../../images/item/Singkong.png",
+    image: "../../../../../images/item/Singkong.png",
     name: "Singkong",
     price: "10.000",
     category: "Umbi-Umbian",
@@ -128,7 +128,7 @@ const allItemKonsumen = [
   },
   {
     id: 14,
-    image: "../../images/item/Talas.png",
+    image: "../../../../../images/item/Talas.png",
     name: "Talas",
     price: "18.000",
     category: "Umbi-Umbian",
@@ -137,7 +137,7 @@ const allItemKonsumen = [
   },
   {
     id: 15,
-    image: "../../images/item/Wortel.png",
+    image: "../../../../../images/item/Wortel.png",
     name: "Wortel",
     price: "15.000",
     category: "Umbi-Umbian",

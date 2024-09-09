@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const KategoryCard = ({ id, image, kategori, link }) => {
+const KategoryCard = ({ id, image, kategori }) => {
   return (
-    <Link to={`kategori/${id}`}>
+    <Link to={`kategori/${kategori}`}>
       <div className="flex gap-4 py-3 px-2 w-max font-jakartaSans items-center rounded-[10px] bg-[#2c946c5b]">
         <h1 className="text-lg">{kategori}</h1>
         <img
