@@ -28,7 +28,7 @@ const Kategori = () => {
   );
 
   return (
-    <div className="pt-[40px] px-5 pb-10">
+    <div className="pt-[40px] px-5 pb-10 min-h-screen md:w-[425px] md:mx-auto md:border-l md:border-r md:border-black ">
       <button onClick={handleBackClick}>
         <img src="../../../../../svg/back.svg" alt="Back" />
       </button>

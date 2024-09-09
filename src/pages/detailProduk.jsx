@@ -23,7 +23,7 @@ const DetailProduk = () => {
   };
 
   return (
-    <div className="relative pt-[40px] px-5 pb-10">
+    <div className="relative pt-[40px] px-5 pb-10 min-h-screen md:w-[425px] md:mx-auto md:border-l md:border-r md:border-black ">
       <button onClick={handleBackClick}>
         <img src="../../../../../svg/back.svg" alt="Back" />
       </button>
@@ -43,17 +43,21 @@ const DetailProduk = () => {
         </div>
       </div>
       {/* Tombol Pesan */}
-      <a
-        href={`https://wa.me/6282242719909?text=${encodeURIComponent(
-          `Hallo Saya ingin beli ${name}`
-        )}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed flex w-[90%] justify-center items-center gap-2 bottom-5 right-5 bg-primary text-white p-3 rounded-xl shadow-lg hover:bg-green-600 transition-colors"
-      >
-        {/* <img src="../../../../../svg/whatsapp.svg" alt="Whatsapp" /> */}
-        <p className="text-lg">Pesan</p>
-      </a>
+      <div className="fixed bottom-5 right-0 w-full flex justify-center">
+        <a
+          href={`https://wa.me/6282242719909?text=${encodeURIComponent(
+            `Hallo Saya ingin beli ${name}`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex w-[90%] justify-center items-center gap-2 
+          bg-primary text-white p-3 rounded-xl shadow-lg
+           hover:bg-green-600 transition-colors md:w-[390px]"
+        >
+          {/* <img src="../../../../../svg/whatsapp.svg" alt="Whatsapp" /> */}
+          <p className="text-lg">Pesan</p>
+        </a>
+      </div>
     </div>
   );
 };
