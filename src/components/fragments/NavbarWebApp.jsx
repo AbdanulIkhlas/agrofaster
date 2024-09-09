@@ -82,7 +82,7 @@ const NavbarWebApp = () => {
   return (
     <nav className="top-0">
       <div
-        className={`h-[60px] flex justify-between items-center md:justify-between w-full fixed  lg:px-20
+        className={`h-[60px] flex justify-between items-center md:w-[425px] w-full fixed
       ${
         isMenuOpen || scrolling
           ? "bg-white text-black"
@@ -90,7 +90,7 @@ const NavbarWebApp = () => {
       } 
       top-0 z-50 px-5 transition-colors duration-300`}
       >
-        <div className="flex items-center gap-1 flex-1 lg:flex-none lg:ps-10">
+        <div className="flex items-center gap-1 flex-1">
           {/* Tampilkan logo putih atau hitam berdasarkan isMenuOpen */}
           {isMenuOpen ? (
             <img
@@ -106,95 +106,15 @@ const NavbarWebApp = () => {
             />
           )}
         </div>
-        <WideContent />
         <div>{isMenuOpen && <SmallContent />}</div>
         <button
-          className="block md:hidden transition-colors duration-300"
+          className="block transition-colors duration-300"
           onClick={handleIsMenuOpen}
         >
           {isMenuOpen ? <IoClose size={30} /> : <IoIosMenu size={30} />}
         </button>
       </div>
     </nav>
-  );
-};
-
-const WideContent = () => {
-  const location = useLocation();
-  const [activeSubMenu, setActiveSubMenu] = useState(null);
-
-  const toggleSubMenu = (index) => {
-    setActiveSubMenu(activeSubMenu === index ? null : index);
-  };
-
-  return (
-    <div className="items-center font-normal hidden md:flex md:justify-end lg:w-full lg:justify-center">
-      <div>
-        <ul className="flex gap-10 text-[16px] font-medium font-jakartaSans lg:text-[16px]">
-          {menus.map((menu, index) => (
-            <li key={menu.link} className="relative">
-              {menu.haveSubMenu ? (
-                <>
-                  <button
-                    className={`flex items-center gap-2 ${
-                      location.pathname === menu.link
-                        ? "text-primary"
-                        : "text-dark"
-                    } hover:text-primary duration-300 transition cursor-pointer`}
-                    onClick={() =>
-                      menu.haveSubMenu ? toggleSubMenu(index) : null
-                    }
-                  >
-                    <Link to={menu.link}>{menu.name}</Link>
-                    {menu.haveSubMenu &&
-                      (activeSubMenu === index ? (
-                        <IoIosArrowUp />
-                      ) : (
-                        <IoIosArrowDown />
-                      ))}
-                  </button>
-                  {menu.haveSubMenu && activeSubMenu === index && (
-                    <ul
-                      className={`absolute z-50 left-0 mt-2 bg-white shadow-lg w-48 text-black transition-transform transform scale-95 origin-top-left duration-300 ease-in-out 
-                        md:-left-24 md:top-[34px] lg:left-0
-                      ${activeSubMenu === index ? "scale-100" : "scale-95"}`}
-                    >
-                      {(menu.name === "Produk"
-                        ? produkSubMenu
-                        : artikelSubMenu
-                      ).map((subMenu) => (
-                        <li
-                          key={subMenu.link}
-                          className="px-4 py-2 hover:bg-gray-100 duration-300"
-                        >
-                          <Link to={subMenu.link} className="block">
-                            <p>{subMenu.name}</p>
-                            <p className="text-gray-400 text-sm">
-                              {subMenu.description}
-                            </p>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </>
-              ) : (
-                <Link
-                  to={menu.link}
-                  className={`${
-                    location.pathname === menu.link
-                      ? "text-primary "
-                      : "text-dark"
-                  } hover:text-primary duration-300 transition cursor-pointer`}
-                >
-                  {menu.name}
-                </Link>
-              )}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
   );
 };
 
@@ -212,7 +132,7 @@ const SmallContent = () => {
   };
 
   return (
-    <div className="lg:hidden block absolute z-50 top-[60px] w-full left-0 right-0 bg-white h-screen transition">
+    <div className="block absolute z-50 top-[60px] w-full left-0 right-0 bg-white h-screen transition">
       <ul className="text-center text-xl mb-2 px-3">
         {menus.map((menu) => (
           <li key={menu.link} className="relative  ">
