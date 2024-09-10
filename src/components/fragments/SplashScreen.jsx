@@ -22,14 +22,14 @@ const SplashScreen = ({ onFinish }) => {
       <div className="flex flex-col items-center p-4">
         {showFirstImage && (
           <img
-            src="../../../public/images/agrofasterLogoSplash.png"
+            src="../../../../../../public/images/agrofasterLogoSplash.png"
             alt="Logo"
             className="w-[200px] -mt-10 transition-opacity duration-700 ease-in-out opacity-100"
           />
         )}
         {showSecondImage && (
           <img
-            src="../../../public/images/agrofasterTextSplash.png"
+            src="./../../../../../public/images/agrofasterTextSplash.png"
             alt="Text"
             className="w-[200px] -mt-5 fade-in-bounce" // Menambahkan kelas untuk animasi bounce dan fade-in
           />
