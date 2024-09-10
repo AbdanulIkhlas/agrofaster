@@ -18,19 +18,19 @@ const ProductCard = ({ id, image, name, weight, price, page }) => {
         </div>
         {page === "saprodi" ? (
           <>
-            <p className="mt-3 text-[13px] md:text-[16px] min-h-[80px]">
+            <p className="mt-3 text-[13px] md:text-[16px] min-h-[80px] md:min-h-[120px]">
               {name}
             </p>
-            <p className="text-[13px] md:text-[16px] h-[20px]">
-              {weight}
-            </p>
+            <p className="text-[13px] md:text-[16px] h-[20px]">{weight}</p>
           </>
         ) : page === "konsumen" ? (
           <>
             <p className="mt-3 text-[14px] md:text-[16px]">{name}</p>
           </>
         ) : null}
-        <h1 className="font-semibold mt-2 text-[16px] md:text-xl">Rp {price}</h1>
+        <h1 className="font-semibold mt-2 text-[16px] md:text-xl">
+          Rp {price}
+        </h1>
       </div>
     </Link>
   );
