@@ -1,4 +1,4 @@
-const rekomendasiProduk = [1,4,6,8,9,12];
+const rekomendasiProduk = [1,3,4,5,6,8,9,12,14,15];
 
 
 const allItemKonsumen = [
