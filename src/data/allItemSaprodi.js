@@ -1,4 +1,4 @@
-const rekomendasiProdukSaprodi = [1,2, 4, 7,8, 9,12, 14,15,16,18, 20];
+const rekomendasiProdukSaprodi = [1, 2, 4, 7, 8, 9, 12, 14, 15, 16, 18, 20];
 
 const allItemSaprodi = [
   // Benih Tanaman
@@ -591,7 +591,7 @@ const allItemSaprodi = [
     image: "../../../../../images/item/Rockwoll.png",
     name: "Rockwoll",
     weight: "",
-    price: "-",
+    price: "125.000",
     category: "Hidroponik",
     detail: [
       {
@@ -621,7 +621,7 @@ const allItemSaprodi = [
     image: "../../../../../images/item/Netpot.png",
     name: "Netpot",
     weight: "",
-    price: "-",
+    price: "25.000",
     category: "Hidroponik",
     detail: [
       {
