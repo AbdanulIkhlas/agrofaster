@@ -133,6 +133,7 @@ const BeliHasilPanen = () => {
                       image={item.image}
                       name={item.name}
                       price={item.price}
+                      page="konsumen"
                     />
                   ))
                 ) : (

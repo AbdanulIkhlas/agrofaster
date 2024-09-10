@@ -90,7 +90,7 @@ const Saprodi = () => {
               <div className="flex gap-4 mt-2 overflow-x-auto scrollbar-thin pb-2">
                 {kategoriSaprodi.map((item) => (
                   <div key={item.id} className="">
-                    <KategoryCard {...item } page="saprodi" />
+                    <KategoryCard {...item} page="saprodi" />
                   </div>
                 ))}
               </div>
@@ -106,7 +106,6 @@ const Saprodi = () => {
                     id={item.id}
                     image={item.image}
                     name={item.name}
-                    name2={item.name2}
                     weight={item.weight}
                     price={item.price}
                     page="saprodi"
@@ -134,7 +133,9 @@ const Saprodi = () => {
                       id={item.id}
                       image={item.image}
                       name={item.name}
+                      weight={item.weight}
                       price={item.price}
+                      page="saprodi"
                     />
                   ))
                 ) : (
