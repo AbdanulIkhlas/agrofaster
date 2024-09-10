@@ -8,7 +8,6 @@ const DetailProdukSaprodi = () => {
   const navigate = useNavigate();
 
   // Temukan produk berdasarkan id
-  // Pastikan id dalam allItemSaprodi dan id dari URL cocok dalam tipe data
   const product = allItemSaprodi.find((item) => item.id.toString() === id);
 
   // Jika produk tidak ditemukan
@@ -16,14 +15,14 @@ const DetailProdukSaprodi = () => {
     return <p>Produk dengan ID {id} tidak ditemukan.</p>;
   }
 
-  const { image, name, price, detail } = product;
+  const { image, name, weight, price, detail } = product;
 
   const handleBackClick = () => {
     navigate(-1); // Kembali ke halaman sebelumnya
   };
 
   return (
-    <div className="relative pt-[40px] px-5 pb-10 min-h-screen md:w-[425px] md:mx-auto md:border-l md:border-r md:border-black ">
+    <div className="relative pt-[40px] px-5 pb-10 min-h-screen md:w-[425px] md:mx-auto md:border-l md:border-r md:border-black">
       <button onClick={handleBackClick}>
         <img src="../../../../../svg/back.svg" alt="Back" />
       </button>
@@ -37,15 +36,65 @@ const DetailProdukSaprodi = () => {
           />
           <div className="w-full">
             <h1 className="text-2xl font-bold mt-4">{name}</h1>
+            <h1 className="text-2xl font-semibold mt-2">{weight}</h1>
             <p className="text-lg text-green-600">Rp {price}</p>
           </div>
-          
+        </div>
+
+        {/* Detail */}
+        <div className="mt-6">
+          {detail.map((section, index) => (
+            <div key={index} className="mb-4">
+              {/* Tampilkan title jika bukan "nullTitle" */}
+              {section.title !== "nullTitle" && (
+                <h2 className="text-lg font-semibold mb-2">{section.title}</h2>
+              )}
+
+              {/* Tampilkan content berdasarkan type */}
+              {section.type === "paragraf" && (
+                <div>
+                  {section.content.map((paragraph, pIndex) => (
+                    <p key={pIndex} className="mb-2 text-justify text-gray-600">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              )}
+
+              {section.type === "list" && (
+                <ul className="list-disc pl-5">
+                  {section.content.map((listItem, lIndex) => (
+                    <li
+                      key={lIndex}
+                      className="mb-1 text-justify text-gray-600"
+                    >
+                      {listItem}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {section.type === "number" && (
+                <ol className="list-decimal pl-5">
+                  {section.content.map((numberItem, nIndex) => (
+                    <li
+                      key={nIndex}
+                      className="mb-1 text-justify text-gray-600"
+                    >
+                      {numberItem}
+                    </li>
+                  ))}
+                </ol>
+              )}
+            </div>
+          ))}
         </div>
       </div>
+
       {/* Tombol Pesan */}
       <div className="fixed bottom-5 right-0 w-full flex justify-center">
         <a
-          href={`https://wa.me/6282242719909?text=${encodeURIComponent(
+          href={`https://api.whatsapp.com/send?phone=6282242719909&text=${encodeURIComponent(
             `Hallo Saya ingin beli ${name}`
           )}`}
           target="_blank"
@@ -54,7 +103,6 @@ const DetailProdukSaprodi = () => {
           bg-primary text-white p-3 rounded-xl shadow-lg
            hover:bg-green-600 transition-colors md:w-[390px]"
         >
-          {/* <img src="../../../../../svg/whatsapp.svg" alt="Whatsapp" /> */}
           <p className="text-lg">Pesan</p>
         </a>
       </div>
