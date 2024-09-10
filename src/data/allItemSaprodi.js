@@ -1,4 +1,4 @@
-const rekomendasiProdukSaprodi = [1, 4, 6, 8, 11, 14, 17, 20];
+const rekomendasiProdukSaprodi = [1,2,3, 4,5, 6, 7,8, 9,10,11,12,13, 14,15,16, 17,18,19, 20];
 
 const allItemSaprodi = [
   // Benih Tanaman
@@ -6,8 +6,7 @@ const allItemSaprodi = [
     id: 1,
     image:
       "../../../../../images/item/Benih Pradana - BRAMA Bein Cabai Rawit.png",
-    name: "Benih Pradana",
-    name2: "BRAMA Bein Cabai Rawit",
+    name: "Benih Pradana - BRAMA Bein Cabai Rawit",
     weight: "10 Gram",
     price: "32.000",
     category: "Benih Tanaman",
@@ -53,8 +52,7 @@ const allItemSaprodi = [
     id: 2,
     image:
       "../../../../../images/item/Benih Pradana - F1 SANTANA Benih Timun.png",
-    name: "Benih Pradana",
-    name2: "F1 SANTANA Benih Timun",
+    name: "Benih Pradana - F1 SANTANA Benih Timun",
     weight: "20 gram",
     price: "52.000",
     category: "Benih Tanaman",
@@ -113,8 +111,7 @@ const allItemSaprodi = [
     id: 3,
     image:
       "../../../../../images/item/Benih Pradana - LANDUNG Benih Kacang Panjang Unggul.png",
-    name: "Benih Pradana",
-    name2: "LANDUNG Benih Kacang Panjang Ungguln",
+    name: "Benih Pradana - LANDUNG Benih Kacang Panjang Unggulan",
     weight: "100 gram",
     price: "22.000",
     category: "Benih Tanaman",
@@ -164,8 +161,7 @@ const allItemSaprodi = [
     id: 4,
     image:
       "../../../../../images/item/Cap Panah Merah - Benih Cabai Besar Panex 100 F1 Isi 50 Biji.png",
-    name: "Cap Panah Merah",
-    name2: "Benih Cabai Besar Panex 100 F1",
+    name: "Cap Panah Merah - Benih Cabai Besar Panex 100 F1",
     weight: "Isi 50 Biji",
     price: "15.000",
     category: "Benih Tanaman",
@@ -211,8 +207,7 @@ const allItemSaprodi = [
     id: 5,
     image:
       "../../../../../images/item/Cap Panah Merah - Microgreens Kit kangkung.png",
-    name: "Cap Panah Merah",
-    name2: "Microgreens Kit kangkung",
+    name: "Cap Panah Merah - Microgreens Kit kangkung",
     weight: "",
     price: "48.000",
     category: "Benih Tanaman",
@@ -282,7 +277,6 @@ const allItemSaprodi = [
     image:
       "../../../../../images/item/Bintang Asia - Benih Cabai Rawit Zahra F1.png",
     name: "Bintang Asia",
-    name2: "Benih Cabai Rawit Zahra F1",
     weight: "10 Gram",
     price: "85.000",
     category: "Benih Tanaman",
@@ -348,8 +342,7 @@ const allItemSaprodi = [
     id: 7,
     image:
       "../../../../../images/item/Agro Nusa Mandiri - Pupuk Daun Lengkap Fertilum D.png",
-    name: "Agro Nusa Mandiri",
-    name2: "Pupuk Daun Lengkap Fertilum D",
+    name: "Agro Nusa Mandiri - Pupuk Daun Lengkap Fertilum D",
     weight: "200 gr",
     price: "22.000",
     category: "Pupuk",
@@ -386,8 +379,7 @@ const allItemSaprodi = [
     id: 8,
     image:
       "../../../../../images/item/Cap Tawon - BORATE 48 Pupuk Baron Kemasan 1 kilogram.png",
-    name: "Cap Tawon",
-    name2: "BORATE 48 Pupuk Baron",
+    name: "Cap Tawon - BORATE 48 Pupuk Baron",
     weight: "1 kilogram",
     price: "56.000",
     category: "Pupuk",
@@ -431,8 +423,7 @@ const allItemSaprodi = [
     id: 9,
     image:
       "../../../../../images/item/Cap Tawon - CALPONIT Pupuk KNO3 Plus Calcium - 2 kilogram.png",
-    name: "Cap Tawon",
-    name2: "CALPONIT Pupuk KNO3 Plus Calcium",
+    name: "ap Tawon - CALPONIT Pupuk KNO3 Plus Calcium",
     weight: "2 kilogram",
     price: "48.000",
     category: "Pupuk",
@@ -467,8 +458,7 @@ const allItemSaprodi = [
     id: 10,
     image:
       "../../../../../images/item/Cap Tawon - Calcium Super Pupuk Kalsium (Ca) - 1 Kilogram.png",
-    name: "Cap Tawon",
-    name2: "Calcium Super Pupuk Kalsium (Ca)",
+    name: "Cap Tawon - Calcium Super Pupuk Kalsium (Ca)",
     weight: "1 Kilogram",
     price: "27.000",
     category: "Pupuk",
@@ -514,8 +504,7 @@ const allItemSaprodi = [
     id: 11,
     image:
       "../../../../../images/item/Cap Tawon - KNO3 Pupuk Kalium Nitrat (Potassium Nitrate) - 2 gram.png",
-    name: "Cap Tawon",
-    name2: "KNO3 Pupuk Kalium Nitrat (Potassium Nitrate)",
+    name: "Cap Tawon - KNO3 Pupuk Kalium Nitrat (Potassium Nitrate)",
     weight: "2 gram",
     price: "52.000",
     category: "Pupuk",
@@ -555,9 +544,8 @@ const allItemSaprodi = [
     id: 12,
     image:
       "../../../../../images/item/DGW - ASTONISH Nutrisi pelindung Tanaman Anorgaik.png",
-    name: "DGW",
-    name2: "ASTONISH Nutrisi pelindung",
-    weight: "Tanaman Anorgaik",
+    name: "DGW - ASTONISH Nutrisi pelindung Tanaman Anorgaik",
+    weight: "",
     price: "65.000",
     category: "Pupuk",
     detail: [
@@ -602,7 +590,6 @@ const allItemSaprodi = [
     id: 13,
     image: "../../../../../images/item/Rockwoll.png",
     name: "Rockwoll",
-    name2: "",
     weight: "",
     price: "-",
     category: "Hidroponik",
@@ -633,7 +620,6 @@ const allItemSaprodi = [
     id: 14,
     image: "../../../../../images/item/Netpot.png",
     name: "Netpot",
-    name2: "",
     weight: "",
     price: "-",
     category: "Hidroponik",
@@ -654,8 +640,7 @@ const allItemSaprodi = [
     id: 15,
     image:
       "../../../../../images/item/BASF – Fungisida Sistemik ACROBAT 50WP – 10 gram.png",
-    name: "BASF",
-    name2: "Fungisida Sistemik ACROBAT 50WP",
+    name: "BASF – Fungisida Sistemik ACROBAT 50WP",
     weight: "10 Gram",
     price: "15.000",
     category: "Pestisida",
@@ -687,8 +672,7 @@ const allItemSaprodi = [
     id: 16,
     image:
       "../../../../../images/item/BASF – REGENT 50SC Insektisida Sistemik Racun Kontak dan Lambung.png",
-    name: "BASF",
-    name2: "REGENT 50SC Insektisida Sistemik Racun Kontak dan Lambung",
+    name: "BASF – REGENT 50SC Insektisida Sistemik Racun Kontak dan Lambung",
     weight: "250 ml",
     price: "80.000",
     category: "Pestisida",
@@ -738,8 +722,7 @@ const allItemSaprodi = [
     id: 17,
     image:
       "../../../../../images/item/Bayer – ANTRACOL 70WP + ZINC Fungisida Kontak – 250 gram.png",
-    name: "Bayer",
-    name2: "ANTRACOL 70WP + ZINC Fungisida Kontak",
+    name: "Bayer – ANTRACOL 70WP + ZINC Fungisida Kontak",
     weight: "250 gram",
     price: "36.000",
     category: "Pestisida",
@@ -792,8 +775,7 @@ const allItemSaprodi = [
     id: 18,
     image:
       "../../../../../images/item/Bayer – BULDOK 25EC Insektisida Racun Kontak dan Lambung – 100 ml.png",
-    name: "Bayer",
-    name2: "BULDOK 25EC Insektisida Racun Kontak dan Lambung",
+    name: "Bayer – BULDOK 25EC Insektisida Racun Kontak dan Lambung",
     weight: "100 ml",
     price: "26.000",
     category: "Pestisida",
@@ -827,8 +809,7 @@ const allItemSaprodi = [
     id: 19,
     image:
       "../../../../../images/item/Bayer – CONFIDOR 5WP Insektisida Sistemik Racun Kontak dan Lambung – 100 gram.png",
-    name: "Bayer",
-    name2: "CONFIDOR 5WP Insektisida Sistemik Racun Kontak dan Lambung",
+    name: "Bayer – CONFIDOR 5WP Insektisida Sistemik Racun Kontak dan Lambung",
     weight: "100 gram",
     price: "37.000",
     category: "Pestisida",
@@ -872,8 +853,7 @@ const allItemSaprodi = [
     id: 20,
     image:
       "../../../../../images/item/Bayer – DECIS 25EC Insektisida Racun Kontak dan Lambung – 100 ml.png",
-    name: "Bayer",
-    name2: "DECIS 25EC Insektisida Racun Kontak dan Lambung",
+    name: "Bayer – DECIS 25EC Insektisida Racun Kontak dan Lambung",
     weight: "100 ml",
     price: "32.000",
     category: "Pestisida",
