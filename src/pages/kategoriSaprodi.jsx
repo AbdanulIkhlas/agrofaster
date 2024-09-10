@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Searching from "../components/fragments/Searching";
-import { allItemKonsumen } from "../data/allItemKonsumen";
+import { allItemSaprodi } from "../data/allItemSaprodi";
 import ProductCard from "../components/fragments/ProductCard";
 
-const Kategori = () => {
+const kategoriSaprodi = () => {
   // Tangkap id dari URL
   const { id } = useParams(); // ID kategori yang diambil dari URL
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ const Kategori = () => {
   };
 
   // Filter produk berdasarkan kategori dari URL (id)
-  const filteredByCategory = allItemKonsumen.filter(
+  const filteredByCategory = allItemSaprodi.filter(
     (item) => item.category && item.category.toLowerCase() === id.toLowerCase()
   );
 
@@ -43,7 +43,7 @@ const Kategori = () => {
           <div className="grid grid-cols-2 gap-4 mt-2 justify-items-center">
             {filteredByCategory.length > 0 ? (
               filteredByCategory.map((item) => (
-                <ProductCard {...item} page="konsumen" />
+                <ProductCard {...item} page="saprodi" />
               ))
             ) : (
               <p className="text-center col-span-2 text-gray-500">
@@ -58,7 +58,7 @@ const Kategori = () => {
           <div className="grid grid-cols-2 gap-4 mt-2 justify-items-center">
             {filteredItems.length > 0 ? (
               filteredItems.map((item) => (
-                <ProductCard {...item} page="konsumen" />
+                <ProductCard {...item} page="saprodi" />
               ))
             ) : (
               <p className="text-center col-span-2 text-gray-500">
@@ -72,4 +72,4 @@ const Kategori = () => {
   );
 };
 
-export default Kategori;
+export default kategoriSaprodi;

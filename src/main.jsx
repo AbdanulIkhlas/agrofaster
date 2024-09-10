@@ -12,6 +12,9 @@ import Saprodi from "./pages/saprodi";
 import JualHasilPanen from "./pages/jualHasilPanen"; 
 import BeliHasilPanen from "./pages/beliHasilPanen";
 import Kategori from "./pages/kategori";
+import DetailProduk from "./pages/detailProduk";
+import DetailProdukSaprodi from "./pages/detailProdukSaprodi";
+import KategoriSaprodi from "./pages/kategoriSaprodi";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +56,18 @@ const router = createBrowserRouter([
   {
     path: "/produk/konsumen/beli-hasil-panen/kategori/:id",
     element: <Kategori />,
+  },
+  {
+    path: "/produk/fast-tani/saprodi/kategori-saprodi/:id",
+    element: <KategoriSaprodi />,
+  },
+  {
+    path: "/produk/konsumen/beli-hasil-panen/detail-produk/:id",
+    element: <DetailProduk />,
+  },
+  {
+    path: "/produk/fast-tani/saprodi/detail-produk-saprodi/:id",
+    element: <DetailProdukSaprodi />,
   },
 ]);
 
