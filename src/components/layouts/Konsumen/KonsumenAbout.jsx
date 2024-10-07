@@ -6,7 +6,7 @@ const KonsumenAbout = () => {
         {/* image 1 */}
         <div className="lg:w-[50%] lg:px-4 lg:py-8 ">
           <img
-            src="../images/fast-tani-about.png"
+            src="../images/konsumen-about.png"
             alt="About Us Image"
             className="w-full h-full md:rounded-3xl"
           />
