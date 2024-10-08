@@ -35,15 +35,13 @@ const FastTaniAbout = () => {
             </p>
           </div>
           <div className="mt-4 px-4 flex flex-col gap-2">
-            <a
+            <Link to="./saprodi"
               className="mt-4 md:mt-4 lg:mt-12"
-              href="Https://Wa.me//6282242719909"
-              target="_blank"
 >
               <ButtonCustom customClass="relative z-10 bg-primary text-white duration-300 hover:shadow-primary hover:bg-silverTree">
                 Cari Produk Saprodi
               </ButtonCustom>
-            </a>
+            </Link>
             <a
               className="mt-4 md:mt-2 lg:mt-4"
               href="Https://Wa.me//6282242719909"
